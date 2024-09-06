@@ -1,0 +1,1100 @@
+---
+title: "Extended Summary"
+image: img/summary.svg
+toc: true
+about:
+  template: trestles
+---
+
+```{r setup, include=FALSE}
+
+# These packages are required for creating the slides
+# Many will need to be installed from Github
+library(icons)
+library(tidyverse)
+library(xaringan)
+library(xaringanExtra)
+library(xaringanthemer)
+
+library(showtext)
+font_add_google(name = "Source Sans Pro")
+showtext::showtext_auto()
+
+ipse_theme <- theme(plot.background = element_rect(fill = "#F8F8F8", colour = "#F8F8F8"), 
+        panel.background = element_rect(fill = "#F8F8F8", colour = "#F8F8F8"),
+        legend.background = element_rect(fill = "#F8F8F8", colour = "#F8F8F8")
+        )
+
+
+turquoise_dark <- "#006353"
+turquoise_tint <- "#00816B"
+turquoise_extradark <- "#093930"
+turquoise_middle <- "#3DB8A2"
+turquoise_light <- "#00AF91"
+ipse_blue <- "#097ABD"
+ipse_gold <- "#FC9C19"
+ipse_lightgold <- "#FDC375"
+ipse_grey <- "#5F584F"
+off_white <- "#f0f0f0"
+
+
+```
+
+
+# Extended Summary
+
+This page provides a summary of the key findings found in the report, as well as some background to the topic and a brief overview of the methods and data used. The full report contains additional detail on methodological justifications, discussion of existing academic literature, and full transcripts of statistical models and other technical details. The three most important findings for policymakers, providers of children's services, and families are as follows:
+
+* Increased spending on preventative and supportive services — including youth work and youth centres, children's centres, family support, teenage pregnancy and substance misuse services — was reliably associated with decreased rates of children in care and children on child protection plans in English local authorities. The size of the effect implies that, in 2022, there were around 8,300 children in care (around 10% of the care population) who we predict would have been able to be supported to stay with their families of origin had spending on these services remained at 2009-10 levels, when they were just over £200 per child better funded than they were in 2022.
+
+* Increased spending on preventative and supportive services was very likely to be cost-neutral or to generate savings in local authority spending. Reducing the costs associated with caring for children who might otherwise live with their families of origin, and improving their mental health and criminal justice outcomes alone would be expected to fund 30p of every £1 spent on any increase each year. The additional benefit of these services reducing child poverty would be expected to result in a further £2.70 of savings for every £1 of spending.
+
+* We must be mindful of the inequalities detected in the research to ensure all children benefit equitably. The research suggested that the effect of increasing spending on preventative and supportive services for children and families varied by local authority, over time, and between age, gender, and ethnic groups. However, the evidence suggests that funding more preventative services creates opportunities for addressing over-representation of some populations in the child welfare system.
+
+This research only considered the relationship between spending and rates of intervention. It did not consider other important factors that should be kept in mind when considering this topic, such as the quality of services received by families; the qualitative experiences of families and social workers working in children's services over this period of time; or the effect of greater spending on the social, emotional, educational outcomes and development of children and young people.
+
+**Please cite this summary as:** Webb, C. (2024). *Investing in Prevention and Support: Spending on family support, children’s centres, young peoples’ services, and other forms of help and child welfare interventions in England, 2009-10 to 2021-22. Final Report.* Sheffield, UK: The University of Sheffield. doi: 10.15131/shef.data.26364292
+
+
+<br>
+
+****
+
+<br>
+
+![](img/money-down.svg){width=20% fig-align='center'}
+
+### Background
+
+<br>
+
+Children's social care has been described as in crisis in England, with rates of children in care growing from around 61 children per 10,000 children aged 0 to 16 in 2009-10 to 74 per 10,000 in 2021-22, an increase of almost 18,000 children nationally. 
+
+There is both a moral and an economic dimension of this crisis. Firstly, we, as a society, should not accept an arrangement where the challenges that families and children face are left to escalate to the point where the only or best option is to place a child in foster care or in a children's home. From a moral perspective, we should be willing to collectively support families so that their children can flourish, addressing problems as early as possible when they emerge — regardless of the age of the child.
+
+From an economic perspective, the growth in the rates of children in care is unsustainable. Outside of adult social care, children's social care is [often the largest item of local authority spending](https://childlawadvice.org.uk/almost-one-third-of-council-funding-spent-on-childrens-social-care-amid-surge-in-referrals/){target="_blank"}, contributing to the risk of bankruptcy. At the same time that rates have been increasing, the average spend on services for children in care (children looked after) has increased from around £57,000 per child in 2009-10 to around £75,000 per child in 2021-22. In total, spending on caring for children in England increased from around £3.7billion to £6.1billion.
+
+One potential cause, and suggested remedy, to this crisis has been spending on preventative and supportive services that can stop problems from escalating and meet the needs of children and families before those needs escalate into safeguarding concerns. The [2022 Independent Review of Children's Social Care](https://assets.publishing.service.gov.uk/media/640a17f28fa8f5560820da4b/Independent_review_of_children_s_social_care_-_Final_report.pdf){target="_blank"} argued for a 'revolution in Family Help', their term for the same collection of services studied here, and an investment of around £2billion over five years to contribute to a 'radical reset' of children's social care.
+
+An enormous real-terms decline in spending on these services has been well documented. For example, see [this article I wrote with Professor Paul Bywaters as part of the Child Welfare Inequalities Project in 2018](https://doi.org/10.1080/03003930.2018.1430028){target="_blank"}, or the [latest report from the YMCA that documents a 73% cut to local authority youth services](https://www.ymcadlg.org/ymca-report-youth-services-spending-cuts/){target="_blank"}. 
+
+The exact provision that are included in spending that is referred to throughout this report as preventative services is often somewhat variable, but this study took an inclusive approach for both theoretical and methodological reasons. Briefly, it includes spending on the following examples taken from [Section 251 Budget Guidance](https://assets.publishing.service.gov.uk/media/5a80c056ed915d74e33fc346/S251_budget_guide_for_local_authorities_2017_to_2018.pdf):
+
+* **Sure start children’s centres and other spend on children under 5**, including devolved children's centres.
+* **Family support services**, including, for example, direct payments for special educational needs and disability; short breaks, adaptations, and equipment for disabled children not in care not provided through the NHS or housing service; targeted family support including through the Troubled Families programme (now known as Supporting Families); family community support work; universal family support services such as Home Start.
+* **Services for young people**, including, for example, youth centres/clubs; universal or targeted youth work; services to support young people’s participation in education or training; substance misuse and teenage pregnancy services; targeted support for young people at risk of poor education and employment outcomes; and leisure time activities delivered using youth work approaches including special interest clubs.
+* **Other children and family services** *not otherwise included elsewhere in Section 251 categories*, which can include examples such as grants to voluntary organisations for activities that do not fall under some other category.
+
+Crucially, excluded from these categories is funding related to:
+
+* **Safeguarding children's services**, including local authority social work functions, assessments, child protection investigations, and commissioning; and,
+* **Children looked after services**, including spending on foster care; children's homes; respite for disabled children in care; leaving care support; and adoption services.
+
+Because the kinds of services offered can be dramatically different, there have been concerns about the comparability of spending on preventative services across local authorities. A 2014 [CIPFA report](https://www.local.gov.uk/sites/default/files/documents/Research%20on%20Children%E2%80%99s%20Services%20-%20Spending%20and%20Budgeting%20-%20Section%20251%20-%20Final%20Report.pdf){target="_blank"} concluded that Section 251 data "are not fit for
+the purpose either of making valid assessments of total spending on specific
+areas or of making useful comparisons between local authorities". Combining all preventative services categories together, as they have the most significant overlap but remain far better differentiated from safeguarding and children looked after spending, alongside the methodology used, makes it possible to eliminate the impact that differences in accounting practice may have on the analysis.
+
+However, it can be helpful context to know, generally speaking, the average proportion of spending on each category and how it has changed before relying on a combined categorisation. As shown in Table 1, spending was predominantly on Sure Start and Under 5 services in 2009-10, with a fairly equal split between Family Support Services and Young Peoples Services across the remainder, with around ten percent of spending falling under the 'other' category.
+
+
+| Category.               | Spend £bn (%) <br> 2009-10 | Spend £bn (%) <br> 2021-22 | 
+|:------------------------|------------------------:|------------------------:|
+| Sure Start & Under 5    | 1.84 (39.8)             | 0.51 (20.3)             | 
+| Family Support Services | 1.07 (23.3)             | 1.44 (58.1)             |
+| Young Peoples Services  | 1.25 (27.0)             | 0.42 (16.8)             |
+| Other                   | 0.46 (9.9)              | 0.12 (4.8)              |
+| Total                   | 4.62                    | 2.48                    |
+
+: Table 1: Change in national spending on preventative and supportive services, adjusted for inflation 2009-10 and 2021-22 (*authors analysis, Section 251 documents*) {.striped .hover}
+
+When contrasted with 2021-22, Family Support Services is the only category of spending to have seen an increase nationally, likely due to investment in the Troubled Families Programme. Both Sure Start and Under 5 spending and Young Peoples services spending reduced dramatically over the 12 years, with the former spending being decreased by over two thirds and the latter spending being cut by just under two thirds. The change in spending on all of these services as well as changes in safeguarding spending is shown in Figure 1.
+
+
+```{r, echo = FALSE, eval = TRUE, out.height=400, fig.height=4, out.width = 550, fig.width = 5.5, fig.align='center', fig.cap="Figure 1: Since 2009-10, the vast majority of local authorities have experienced steep declines in their spending on preventative and supportive services; most have maintained their safeguarding spending, while their spending on children looked after has increased. *Author's analysis of Section 251 Data, adjusted for SPPI*", message=FALSE}
+
+
+safeguarding_prev_spend_change <- read_csv("data/safeguarding_prev_spend_change.csv")
+
+spendribbon_prev <- safeguarding_prev_spend_change %>%
+  ggplot() +
+  geom_ribbon(aes(x = time_period, ymin = q25_prev_spend + 284, ymax = q75_prev_spend + 284),
+               fill = turquoise_light, colour = "transparent") +
+  geom_line(aes(x = time_period, y = med_prev_spend + 284), colour = turquoise_dark) +
+  geom_point(aes(x = time_period, y = med_prev_spend + 284), colour = turquoise_dark, pch = 18) +
+  scale_x_continuous(breaks = seq(2010, 2022, 2)) +
+  ylab("Preventative Spending per Child\n(50% Quantile)") +
+  xlab("Year Ending") +
+  theme(plot.background = element_rect(fill = "#006353", colour = "#006353"), 
+        panel.background = element_rect(fill = "#006353", colour = "#006353"),
+        legend.background = element_rect(fill = "#006353", colour = "#006353"),
+        text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"), 
+        axis.text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"),
+        panel.grid.major = element_line(colour = "#00816B"), 
+        panel.grid.minor = element_blank(),
+        axis.ticks = element_line(colour = "#00816B")
+        )
+
+spendribbon_safg <- safeguarding_prev_spend_change %>%
+  ggplot() +
+  geom_ribbon(aes(x = time_period, ymin = q25_safg_spend +241, ymax = q75_safg_spend+241),
+               fill = ipse_lightgold, colour = "transparent") +
+  geom_line(aes(x = time_period, y = med_safg_spend+241), colour = ipse_gold) +
+  geom_point(aes(x = time_period, y = med_safg_spend+241), colour = ipse_gold, pch = 18) +
+  scale_x_continuous(breaks = seq(2010, 2022, 2)) +
+  ylab("Safeguarding Spending per Child\n(50% Quantile)") +
+  xlab("Year Ending") +
+  theme(plot.background = element_rect(fill = "#006353", colour = "#006353"), 
+        panel.background = element_rect(fill = "#006353", colour = "#006353"),
+        legend.background = element_rect(fill = "#006353", colour = "#006353"),
+        text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"), 
+        axis.text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"),
+        panel.grid.major = element_line(colour = "#00816B"), 
+        panel.grid.minor = element_blank(),
+        axis.ticks = element_line(colour = "#00816B")
+        )
+
+
+library(patchwork)
+
+spendribbon_prev + spendribbon_safg +
+  plot_layout(axis_titles = "collect") & 
+  plot_annotation(theme = theme(plot.background = element_rect(fill = "#006353", colour = "#006353"), 
+        panel.background = element_rect(fill = "#006353", colour = "#006353"),
+        legend.background = element_rect(fill = "#006353", colour = "#006353"),
+        text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"), 
+        axis.text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"),
+        panel.grid.major = element_line(colour = "#00816B"), 
+        panel.grid.minor = element_blank(),
+        axis.ticks = element_line(colour = "#00816B")
+        ))
+
+
+```
+
+However, evidence that demonstrates the efficacy of this kind of spending on child welfare interventions has been limited. As the authors of the Association for Directors of Children's Services [2014 Safeguarding Pressures report](https://www.adcs.org.uk/wp-content/uploads/2024/05/adcs-sg-pressures-p4-exec-summary.pdf){target="_blank"} put it, "understanding the prevalence and impact of early help services nationally is difficult". Most notably, the National Audit Office in 2019 published a [report](https://www.nao.org.uk/wp-content/uploads/2019/01/Pressures-on-Childrens-Social-Care.pdf){target="_blank"} that claimed that reduced spending on Sure Start and Children's Centres had not reduced rates of child protection plans. This lack of evidence has been influential in policymaking, and runs counter to the logic that investing in preventation and support should reduce rates of intervention.
+
+More recently, evidence that spending on preventative and supportive services reduces child welfare interventions has been mounting, and was summarised in an [evidence paper](https://www.ncb.org.uk/sites/default/files/uploads/attachments/Evidence%20Paper%20-%20Investing%20in%20Prevention%20-%20FINAL.pdf){target="_blank"} I co-authored with Dr. Davara Bennett, Professor Rick Hood, Professor Paul Bywaters, and the National Children's Bureau. 
+
+What defines the articles presented in this paper is that they utilise a methodological approach that uniquely addresses the difficulty of estimating the effect of spending on child welfare interventions. 
+
+
+<br>
+
+![](img/icons8-bell_curve.svg){width=20% fig-align='center'}
+
+### Methodology
+
+<br>
+
+#### Data
+
+This research project used [Section 251 Outturns](https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/ed88ffae-4976-44a5-a690-78df4c25a60c){target='_blank'} as the primary measure of expenditure on children and young peoples' services. Expenditure was adjusted for inflation using the [Service Producer Price Index](https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/servicesproducerpriceindexsppi){target='_blank'}, with all spending rebased to 2022 prices. Per capita spending was then calculated at the local authority level over time using the [Admin-Based Population Estimates](https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/articles/adminbasedpopulationestimates/updatedestimatesforlocalauthoritiesinenglandandwales2021to2022){target='_blank'} dataset created by the Office for National Statistics. These population estimates were used given the [significant discrepancy](https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/reconciliationofmidyearpopulationestimateswithcensus2021englandandwales/2023-02-28){target='blank'} between population estimates from 2010-11 to 2021-22 and the population census data released in 2021-22, which were particularly marked for children and young people.
+
+Rates of child welfare interventions — numbers of children looked after, numbers of child protection plans, and numbers of children in need — were collated from public statistical releases of the [Children in Need Census](https://www.gov.uk/government/collections/statistics-children-in-need){target='_blank'} and [Children Looked After Statistics (SSDA903)](https://www.gov.uk/government/collections/statistics-looked-after-children){target='_blank'} at the local authority level. Data about child poverty were taken from the [2019 Indices of Multiple Deprivation](https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019){target='_blank'} (for use in analyses that spanned from 2009 to 2022), and from the Department for Work and Pension's [children in relative low income families](https://www.gov.uk/government/collections/children-in-low-income-families-local-area-statistics){target='_blank'} (before housing costs) statistical release for analyses between 2014 and 2022.
+
+Data from 2009-10 to 2021-22 were collated into a single local authority level dataset for analysis. Three local authorities were excluded from the analysis (City of London, Isles of Scilly, and the Isle of Wight) due to their small populations. Missing data at specific time points for some local authorities were imputed using multiple imputation by chained equations. All data sources, tidying, and transformation, is documented in [this open access github repository](https://github.com/cjrwebb/ipse-data-tidying-repo){target='_blank'}.
+
+#### Methods
+
+**Within-between models**
+
+The analysis used *within-between* regression models in order to identify the effect that changes in spending on preventative and supportive services had on rates of child welfare interventions within local authorities. The aim of a *within-between* model in this context is to separate the variance in child welfare interventions and spending *between* local authorities from the variance *within* local authorities. These can often be quite different. For example, one local authority might have much higher spending than another local authority in general. This would represent differences 'between' the local authorities. But one local authority might have much lower spending in some years than their average when compared to another. These represent differences 'within' local authorities.
+
+This is important because the relationships between things that differ between local authorities is often different to the relationships between things that differ within local authorities. For example, in this case, the amount that a local authority spends on preventative services compared to other local authorities may actually be determined by their rates of child welfare interventions, rather than the other way around. High-spending local authorities might receive more central government funding due to their greater needs, or low-spending local authorities might have less to spend on prevention because they have high rates of children in care. 
+
+However, at the *within* level, we can explore what happens to intervention rates within a local authority when they spend less or more than their average level of spending in a given year, or when they spent more, or less, than their average level of spending in the previous year. By focusing within local authorities, we can be more confident that the relationship we are measuring is the one we are interested in: the impact that increased or decreased spending relative to what is typical for a given service has on rates of intervention, relative to what is typical for that local authority.
+
+In all analyses, spending on safeguarding (spending related to social work child protection functions) was included as a potential confounder throughout. 
+
+**Bayesian inference**
+
+This research also used Bayesian inference rather than frequentist inference when assessing the 'significance' of the findings. It is less typical to see Bayesian social science research, and most people will be more comfortable with the hypothesis tests and "statistical significance" wording used in frequentist research. Rather, in this study, the *probability of direction* and *89% credible interval* based on a Bayesian posterior distribution is used to express the uncertainty in any relationships between variables. The former refers to the probability that the relationship is positive or negative, for example, that increased spending decreases child welfare intervention rates, while the latter represents the range of effects that sit within the central 89% of the posterior distribution, which represents the plausibility of different values. 
+
+
+#### Indirect effects
+
+The research sought to model a two-year effect of changes in spending on preventative services within an average local authority on rates of child welfare interventions (Children in Need, Child Protection Plans, and Children Looked After). Any plausible indirect effects through prior stages of intervention were also modelled. For example, it was assumed that while spending on preventative and supportive services might impact on rates of children looked after directly, it might also have an *indirect* effect of reducing the rate of children looked after by simultaneously reducing the numbers of children placed on child protection plans and the numbers of children in need. Failure to model this potential indirect effect would be considered underestimating the impact of this spending.
+
+Another form of indirect effect relates to the impact spending on preventative and supportive services within a local authority might have on child poverty. When considering changes within local authorities there is reasonable justification for the argument that greater investment in preventative and supportive spending can reduce rates of child poverty. The justification for this is that the kind of services funded (outlined above), typically provide families with additional forms of funded childcare, especially for children of secondary school age or older (for example, youth clubs/centres, children's centres, and grants to voluntary organisations for activities for children and young people). In addition, an explicit aim of many of the family support services offered throughout the period — including Sure Start centres and Troubled Families Programme — was to increase the rate of employment among parents. As such, for analyses between 2014-15 and 2021-22, an indirect effect of spending in this area on child poverty rates is also estimated.
+
+More detail and justifications of these theoretical frameworks is provided in the full report. In addition, all estimates for effects are broken down into their constituent parts so that, for example, only the direct effect of spending on preventative services in isolation from any indirect effects can be reviewed. This may be appropriate if one is skeptical of the indirect effect described above. Incidentally, even under that conservative criteria, increased spending on prevention and support was found to decrease rates of children looked after and children on child protection plans.
+
+
+<br>
+
+
+![](img/family.svg){width=20% fig-align='center'}
+
+### Spending decreases child welfare interventions
+
+<br>
+
+On average between 2009-10 and 2021-22, each £100 per child increase in spending on preventative and supportive services within an average local authority was associated with a 3.5 per 10,000 reduction in children looked after rates over two years and a 2 per 10,000 decrease in child protection plan rates over two years. This would equate to around 20 fewer children in care and 10 fewer children placed on a child protection plan on any given day of the year in an average sized local authority. 
+
+Had spending on preventative and supportive services remained at 2009-10 levels, where it was on average £212 higher per child, we would expect there to be around 8,300 fewer children in care nationally and 4,000 fewer children on child protection plans nationally.
+
+There was no strong evidence that increased preventative spending was related to decreased children in need rates over two-year periods. Increased preventative spending tended to increase children in need rates slightly in the year in which the spending happens, before that spending then results in a decrease in rates of around the same magnitude the following year. As such, children in need rates tended to stabalise over time.
+
+Figure 2 shows the estimated impact that successive cuts to services to support families and children are likely to have had on rates of children in care (per 100,000) between each pair of financial years. For example, the £14.86 per child cut from spending between 2009-10 and 2010-11 is predicted to have increased rates of children in care by around 5.23 per 100,000.
+
+
+```{r, echo = FALSE, eval = TRUE, out.height=600, fig.height=6, out.width = 500, fig.width = 5, fig.align='center', fig.cap="Figure 2: The model predicted effects of changes in spending in each year on children looked after rates the following year, *2009-10 to 2021-22*."}
+
+spend_change_plot <- read_rds("data/spend-change.rds")
+
+spend_change_plot +
+  theme(plot.background = element_rect(fill = "#006353", colour = "#006353"), 
+        panel.background = element_rect(fill = "#006353", colour = "#006353"),
+        legend.background = element_rect(fill = "#006353", colour = "#006353"),
+        text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"), 
+        axis.text = element_text(family = "Source Sans Pro", colour = "#f0f0f0")
+        ) +
+  guides(colour = guide_legend(nrow=2, byrow=TRUE))
+ 
+```
+
+
+Between 2014-15 and 2021-22, where comparable measures of local authority level child poverty are available, we continue to find that increased spending on preventative and supportive services was reliably associated with decreased rates of children looked after. In fact, the strength of the relationship increases slightly from a predicted 3.52 per 10,000 decrease in children looked after for each £100 spent to a 3.86 per 10,000 decrease.
+
+However, during this more recent time period there was no longer evidence that increased preventative spending was effective for decreasing child protection plan rates or children in need rates. Rather, the evidence seemed to support the idea that increased spending tended to increase these rates.
+
+This suggests that while increased spending since 2014-15 is still very likely to be effective for reducing rates of children in care, there is not sufficient resource or types of services available to address the kinds of needs or perceived risks that might result in families receiving some other form of social work intervention. This is consistent with recent qualitative studies which suggest that services have had to become more and more targeted and rationed as funding has decreased. 
+
+Analysing this time period also reiterates how strong the relationship between child poverty and rates of child welfare interventions is. Figure 3 shows the impact that changes in child poverty and changes in preventative services are predicted to have had on children looked after rates in an average local authority.
+
+
+```{r, echo = FALSE, eval = TRUE, out.height=400, fig.height=4, out.width = 550, fig.width = 5.5, fig.align='center', fig.cap="Figure 3: When both changes in child poverty (in orange) and changes in preventative spending (in green) are used to predict changes in children looked after rates between 2014-15 and 2021-22, they are able to almost entirely predict the cumulative change. The impact of recent changes in child poverty outweighs the impact of changes in spending by a factor of 2 to 1, but the largest contribution of spending for reducing children looked after rates is theorised to be its effect mitigating child poverty.", message=FALSE}
+
+library(gginnards)
+
+cla_change_pov_spe_breakdown <- read_rds("data/cla_change_pov_spe_breakdown.rds")
+
+cla_change_pov_spe_breakdown <- delete_layers(cla_change_pov_spe_breakdown, "GeomText") 
+cla_change_pov_spe_breakdown <- delete_layers(cla_change_pov_spe_breakdown, "GeomCurve") 
+cla_change_pov_spe_breakdown <- delete_layers(cla_change_pov_spe_breakdown, "GeomHLine") 
+cla_change_pov_spe_breakdown +
+  annotate("text", y = 9.3, x = 6.4, label = "Actual CLA Change", size = 3, colour = off_white) + 
+  annotate("segment", x = 6, xend = 7, y = 8.46 + 0.39, yend = 8.46 + 0.39, colour = off_white) +
+  theme(
+    panel.grid = element_blank(),
+      plot.background = element_rect(fill = "#006353", colour = "#006353"), 
+        panel.background = element_rect(fill = "#006353", colour = "#006353"),
+        legend.background = element_rect(fill = "#006353", colour = "#006353"),
+        text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"), 
+        axis.text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"),
+        panel.grid.minor = element_blank(),
+        axis.ticks = element_line(colour = "#00816B")
+        ) +
+  scale_fill_manual(values = c(ipse_gold, turquoise_light, turquoise_light, turquoise_light))
+
+```
+
+More than two thirds of an average local authority's predicted increase in children looked after rates could be attributed to increases in child poverty, around 6 of the 8.5 per 10,000 predicted increase. 
+
+Just under one third of the average local authority increase could be attributed to changes in spending during this period. However, it should be noted that a very large proportion of all cuts to preventative and supportive services occurred prior to 2014-15, as was shown in Figure 2.
+
+Of these cuts to preventative services, around 60% of their impact on children looked after rates was related to their capacity to prevent child poverty. 
+
+
+
+<br>
+
+![](img/icons8-british_pound.svg){width=20% fig-align='center'}
+
+### Spending is likely to be cost-neutral or to save money
+
+<br>
+
+The 'costs' associated with children being looked after are notoriously difficult to estimate, and the moral and human costs of not supporting families to be able to remain together safely should outweigh any economic costs. Further, we must be cautious not to oversimplify the often unpredictable ways that services might respond to increased funding, especially where thresholds are currently operating at very high levels in order to cope with demand. However, the fiscal sustainability of investing in preventative services is nevertheless an important aspect of policy.
+
+The average cost associated with caring for a child in care in 2021-22 was £77,205 per year, meaning the costs associated with the additional 8,300 children in care than would be expected had spending remained at 2009-10 levels would be £640million. 
+
+In addition, reducing the high rates of criminal justice contact among children in care and improving mental health outcomes would be expected to be associated with a further £40.5million and £31.5million of savings respectively, not to mention the improved life chances for these children.
+
+It is difficult to estimate the costs associated with children placed on child protection plans, but adjusting cost calculator unit cost estimates by [Holmes, et al. (2010)](https://assets.publishing.service.gov.uk/media/5a7a471fe5274a319e7791f1/DFE-RB056.pdf){target='_blank'} for inflation, including an average of 6 months of ongoing support, would imply a cost of £14.3million annually from child protection processes alone. This is a conservative estimate as it does not account for any improved educational, health, or other outcomes that these children may have.
+
+This indicative value-for-money estimate suggests that just over 30 percent of the costs associated with investing in preventative and supportive children's services would be returned in the very short term by reductions in costs associated with direct outcomes.
+
+
+<br>
+
+![](img/econ-cycle.svg){width=40% fig-align='center'}
+
+<br>
+
+Looking beyond the short-term, immediate outcomes suggests that investment in these services would very likely result in net savings for public services.
+
+For example, we would expect the impact of restoring spending on preventative and supportive child and family services to 2009-10 levels to also lift around 365,000 children out of poverty. If we consider the recent estimates of the cost of child poverty produced by the [Child Poverty Action Group](https://cpag.org.uk/news/cost-child-poverty-2023), we would expect this reduction in child poverty to result in a £6.43billion per year worth of gains. This would mean that, taken together with the immediate direct costs related to children in care or on child protection plans, around £3 of spending would be expected to be returned for each £1 spent on preventative services.
+
+These are conservative estimates across only a small, limited, number of predicted outcomes which suggest that investing in prevention is very likely to be cost-neutral or to save money.
+
+
+<br>
+
+![](img/partnership.svg){width=20% fig-align='center'}
+
+### Increased prevention gives safeguarding services alternatives to care
+
+<br>
+
+The study also considered the way that preventative services and safeguarding services interact. Specifically, the research explored whether increased investment in safeguarding services — largely child protection social work — resulted in more children being taken into care when preventative and supportive services were less well-funded. 
+
+In the absence of support services to refer or signpost families to, there is a risk that an environment is created where social workers have few options other than child protection investigation and children's social care to manage the risks that children face. As such, underfunding of prevention and support while maintaining or increasing child protection social work spending to meet may create an environment where rates of children entering care grow rapidly.
+
+There was evidence that this was the case: in years where local authorities' spending on preventative services was higher, increased spending on safeguarding services was less likely to be linked to increased rates of children in care than in years where spending on preventative services was lower. Figure 4 visualises this relationship across five levels of spending on preventative services: very low (£200 per child below the average for the local authority); low (£100 per child below the average for the local authority); average; high (£100 per child above the average for the local authority); and very high (£200 per child above the average for the local authority), relatively speaking.
+
+
+
+```{r, echo = FALSE, eval = TRUE, out.height=550, fig.height=5.5, out.width = 550, fig.width = 5.5, fig.align='center', fig.cap="Figure 4: The plot shows the predicted effect of increasing safeguarding spending depending on the level of preventative services spending within a local authority; increased safeguarding spending tends to be associated with increased rates of children in care unless preventative and supportive services are adequately funded.", message=FALSE}
+
+
+library(ggdist)
+
+safeguarding_int_plots <- read_rds("data/safeguarding_int_plots.rds")
+
+safeguarding_int_plots[[1]][[1]]$data %>%
+  ggplot(aes(y = factor(as.character(moderator_value), levels = c("-200", "-100", "0", "100", "200")), x = value, fill = after_stat(x < 0))) +
+  stat_dotsinterval(.width = c(0.5, 0.89), quantiles = 100, slab_size = 0.5, slab_colour = NA, colour = "#093930") +
+  scale_fill_manual(labels = c(">0", "<0"), 
+                    values = c("#3DB8A2", ipse_gold)) +
+  theme(legend.position = "none") +
+  xlab("Predicted effect of a £100 per child increase\nin safeguarding spending on children\nlooked after rate") +
+  ylab("Spending on Preventative Services\nper Child (£)") +
+  coord_flip() +
+  ipse_theme +
+  theme(
+    panel.grid = element_blank(),
+      plot.background = element_rect(fill = "#006353", colour = "#006353"), 
+        panel.background = element_rect(fill = "#006353", colour = "#006353"),
+        legend.background = element_rect(fill = "#006353", colour = "#006353"),
+        text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"), 
+        axis.text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"),
+        panel.grid.minor = element_blank(),
+        panel.grid.major = element_line(colour = "#00816B"),
+        axis.ticks = element_line(colour = "#00816B")
+        )
+
+```
+
+When spending on preventative services is very low within a local authority, we would expect to see each additional £100 per child in spending on safeguarding services above the average result in between 4.5 to 10 additional children in care.
+
+By contrast, in years where spending on preventative services was around £200 per child higher than the average, we wouldn't expect an increase in safeguarding services spending to result in any reliable increase or decrease in the numbers of children in care in that year. 
+
+This finding suggests that adequate investment in preventative and supportive services can help social workers find ways to help families remain together safely by utilising the community support available and that resolving the 'care crisis' cannot be achieved through investing in child protection social work alone. Investment in preventative and supportive services and wider structural issues, namely child poverty, are needed.  
+
+
+
+<br>
+
+![](img/timeline.svg){width=20% fig-align='center'}
+
+### The effect of spending has changed over time
+
+<br>
+
+
+While the effect of higher preventative spending within local authorities was to lower rates of most child welfare interventions on average over the entire period studied, there was considerable variation in this effect depending on the pair of years analysed. The types of preventative and supportive services provided for families have undergone significant transformation since 2009-10.
+
+In particular, we can consider the overall affect that austerity has had on the coverage of services, where services are often rationed to those determined to be most in need. But we can also consider the influence of certain landmark reviews and reports such as the Field Review and the Allen Reports, which directed more attention towards intervention at earlier ages (i.e. in the first 1,000 days). 
+
+We can also consider the role of flagship policies of the coalition and Conservative governments such as the Troubled Families Programme, which emphasised direct casework with individual families rather than community provision. The epistemological landscape also changed dramatically over the period, with significant investment in 'What Works' centres that aimed to improve social interventions through evaluation and, often, assessing the extent to which studies providing evidence for or against interventions met causal criteria. 
+
+
+```{r, echo = FALSE, eval = TRUE, out.height=400, fig.height=4, out.width = 550, fig.width = 5.5, fig.align='center', fig.cap="Figure 5: This timeline illustrates some key policy developments in children's services over the time period studied; this included new approaches to evidence, a new/renewed emphasis on early years, and a focus on family casework.", message=FALSE}
+
+
+time <- seq(2009, 2022, 1)
+y <- 1
+
+tibble(time, y) %>%
+  ggplot(aes(x = time, y = y)) +
+  geom_hline(yintercept = 1, colour = off_white, linewidth = 1) +
+  ylim(c(0.995, 1.03)) +
+  geom_text(aes(y = 0.997, x = time, label = time), size = 3, angle = 90, colour = turquoise_tint) +
+  annotate("text", x = 2011, y = 1.0025, angle = 70, label = "Publication of the Allen Reports", hjust = 0, size = 3, colour = off_white, family = "Source Sans Pro") +
+    annotate("text", x = 2011.5, y = 1.0025, angle = 70, label = "Austerity measures hit prevention (-£54.40pc)", hjust = 0, size = 3, colour = off_white, family = "Source Sans Pro") +
+  annotate("text", x = 2010, y = 1.0025, angle = 70, label = "Publication of the Field Review", hjust = 0, size = 3, colour = off_white, family = "Source Sans Pro") +
+  annotate("text", x = 2012, y = 1.0025, angle = 70, label = "Creation of the Early Intervention Foundation", hjust = 0, size = 3, colour = off_white, family = "Source Sans Pro") +
+  annotate("text", x = 2009, y = 1.0025, angle = 70, label = "Austerity measures after financial crises", hjust = 0, size = 3, colour = off_white, family = "Source Sans Pro") +
+  annotate("text", x = 2013, y = 1.0025, angle = 70, label = "First Troubled Families Programme begins", hjust = 0, size = 3, colour = off_white, family = "Source Sans Pro") + # 120k families
+  annotate("text", x = 2013.5, y = 1.0025, angle = 70, label = "Changes to funding formula", hjust = 0, size = 3, colour = turquoise_dark, family = "Source Sans Pro") +
+  annotate("text", x = 2014, y = 1.0025, angle = 70, label = "ADCS warn of limited capacity for prevention", hjust = 0, size = 3, colour = off_white, family = "Source Sans Pro") +
+  annotate("text", x = 2015, y = 1.0025, angle = 70, label = "Second Troubled Families Programme begins", hjust = 0, size = 3, colour = off_white, family = "Source Sans Pro") + # 420k
+  annotate("text", x = 2017, y = 1.0025, angle = 70, label = "What Works for CSC established", hjust = 0, size = 3, colour = off_white, family = "Source Sans Pro") + 
+  annotate("text", x = 2020, y = 1.0025, angle = 70, label = "COVID-19 Pandemic starts", hjust = 0, size = 3, colour = off_white, family = "Source Sans Pro") + 
+  ylab("") +
+  xlab("") +
+  geom_point(colour = off_white, size = 2) + 
+  annotate("point", x = 2022, y = 1, colour = ipse_gold, size = 2)+ 
+  ipse_theme +
+  theme(axis.ticks = element_blank(), axis.text = element_blank(),
+        panel.background = element_blank(), panel.grid = element_blank(), panel.border = element_blank()) +
+  theme(
+    panel.grid = element_blank(),
+      plot.background = element_rect(fill = "#006353", colour = "#006353"), 
+        panel.background = element_rect(fill = "#006353", colour = "#006353"),
+        legend.background = element_rect(fill = "#006353", colour = "#006353")
+        )
+
+
+```
+
+
+The collective impact of these policy changes is that preventative and supportive interventions that targeted younger children, which could be evaluated using randomised controlled trials, and that targeted more complex or challenging needs at the individual or household unit rather than at the community level, increased in status over the 2010 decade.
+
+Figure 6 illustrates that varying effect that increased spending on preventative and supportive spending is predicted to have had depending on the point in time since 2009-10 that is observed. More gold points on each distribution indicate greater credibility for the idea that investment decreased that form of intervention, which a greater prevalence of turquoise points in the distribution indicates more credibility for the idea that investment increased that form of intervention.
+
+
+```{r, echo = FALSE, eval = TRUE, out.height=500, fig.height=5, out.width = 550, fig.width = 5.5, fig.align='center', fig.cap="Figure 6: The effect of spending on intervention rates has also differed during this time; between 2010-11 and 2011-12, spending was mostly effective for decreasing all forms of intervention. Between 2013 and 2017 there was a period of 'no clear effectiveness', and since then spending has largely been effective for reducing children looked after rates.", message=FALSE}
+
+random_eff_year_plot <- read_rds("data/random_eff_year_plots.rds")
+
+set.seed(90)
+cla_rate_data <- random_eff_year_plot[[1]]$data %>%
+  group_by(year) %>%
+  sample_n(1500)
+
+set.seed(90)
+cpp_rate_data <- random_eff_year_plot[[2]]$data %>%
+  group_by(year) %>%
+  sample_n(1500)
+
+set.seed(90)
+cin_rate_data <- random_eff_year_plot[[3]]$data %>%
+  group_by(year) %>%
+  sample_n(1500)
+
+years_c <- unique(cin_rate_data$year)
+years_c <- years_c[seq(1, length(years_c), 2)]
+
+cla_year_plot <- cla_rate_data %>%
+  ggplot(aes(y = year, x = value, fill = after_stat(x < 0))) +
+  stat_dotsinterval(.width = c(0.5, 0.89), quantiles = 100, slab_size = 0.25, slab_colour = NA, interval_size_domain = c(1, 0.5), colour = "#093930") +
+  theme_minimal() +
+  scale_fill_manual(labels = c(">0", "<0"), 
+                    values = c(turquoise_light, ipse_gold)) +
+  # scale_y_discrete(labels = c("Preventative Spending Lag + Concurrent Effect",
+  #                             "Preventative Spending Concurrent Effect",
+  #                             "Preventative Spending Lag Effect")) +
+  ylab("") +
+  xlab("Change in CLA per 10,000 for\na £100 increase per child\nwithin LA in prior year") +
+  ggeasy::easy_remove_legend() + theme(plot.background = element_rect(fill = "white", colour = "white")) +
+  coord_flip() + 
+  ipse_theme + theme(axis.title = element_text(family = "Source Sans Pro", size = 7),
+                     axis.text = element_text(family = "Source Sans Pro", size = 7)) +
+  theme(
+    panel.grid = element_blank(),
+      plot.background = element_rect(fill = "#006353", colour = "#006353"), 
+        panel.background = element_rect(fill = "#006353", colour = "#006353"),
+        legend.background = element_rect(fill = "#006353", colour = "#006353"),
+        text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"), 
+        axis.text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"),
+        axis.ticks = element_line(colour = turquoise_tint)
+        ) +
+  scale_y_discrete(breaks = years_c)
+
+cpp_year_plot <- cpp_rate_data %>%
+  ggplot(aes(y = year, x = value, fill = after_stat(x < 0))) +
+  stat_dotsinterval(.width = c(0.5, 0.89), quantiles = 100, slab_size = 0.25, slab_colour = NA, interval_size_domain = c(1, 0.5), colour = "#093930") +
+  theme_minimal() +
+  scale_fill_manual(labels = c(">0", "<0"), 
+                    values = c(turquoise_light, ipse_gold)) +
+  # scale_y_discrete(labels = c("Preventative Spending Lag + Concurrent Effect",
+  #                             "Preventative Spending Concurrent Effect",
+  #                             "Preventative Spending Lag Effect")) +
+  ylab("") +
+  xlab("Change in CPP per 10,000 for\na £100 increase per child\nwithin LA in prior year") +
+  ggeasy::easy_remove_legend() + 
+  coord_flip() + 
+  ipse_theme + theme(axis.title = element_text(family = "Source Sans Pro", size = 7),
+                     axis.text = element_text(family = "Source Sans Pro", size = 7)) +
+  theme(
+    panel.grid = element_blank(),
+      plot.background = element_rect(fill = "#006353", colour = "#006353"), 
+        panel.background = element_rect(fill = "#006353", colour = "#006353"),
+        legend.background = element_rect(fill = "#006353", colour = "#006353"),
+        text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"), 
+        axis.text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"),
+        axis.ticks = element_line(colour = turquoise_tint)
+        ) +
+  scale_y_discrete(breaks = years_c)
+
+cin_year_plot <- cin_rate_data %>%
+  ggplot(aes(y = year, x = value, fill = after_stat(x < 0))) +
+  stat_dotsinterval(.width = c(0.5, 0.89), quantiles = 100, slab_size = 0.5, slab_colour = NA, interval_size_domain = c(1, 0.5), colour = "#093930") +
+  theme_minimal() +
+  theme(plot.background = element_rect(fill = "white")) +
+  scale_fill_manual(labels = c(">0", "<0"), 
+                    values = c(turquoise_light, ipse_gold)) +
+  # scale_y_discrete(labels = c("Preventative Spending Lag + Concurrent Effect",
+  #                             "Preventative Spending Concurrent Effect",
+  #                             "Preventative Spending Lag Effect")) +
+  ylab("") +
+  xlab("Change in CIN per 10,000 for\na £100 increase per child\nwithin LA in prior year") +
+  ggeasy::easy_remove_legend() + theme(plot.background = element_rect(fill = "white", colour = "white")) +
+  coord_flip() + 
+  ipse_theme + theme(axis.title = element_text(family = "Source Sans Pro", size = 7),
+                     axis.text = element_text(family = "Source Sans Pro", size = 7)
+                     ) +
+  theme(
+    panel.grid = element_blank(),
+      plot.background = element_rect(fill = "#006353", colour = "#006353"), 
+        panel.background = element_rect(fill = "#006353", colour = "#006353"),
+        legend.background = element_rect(fill = "#006353", colour = "#006353"),
+        text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"), 
+        axis.text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"),
+        axis.ticks = element_line(colour = turquoise_tint)
+        ) +
+  scale_y_discrete(breaks = years_c)
+
+
+# random_eff_year_plot + ipse_theme + theme(axis.text = element_text(family = "Source Sans Pro", size = 6))
+
+
+combined_year_plot <- cla_year_plot / cpp_year_plot / cin_year_plot
+
+combined_year_plot & 
+  plot_annotation(theme = theme(plot.background = element_rect(fill = "#006353", colour = "#006353"), 
+        panel.background = element_rect(fill = "#006353", colour = "#006353"),
+        legend.background = element_rect(fill = "#006353", colour = "#006353"),
+        text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"), 
+        axis.text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"),
+        panel.grid.major = element_line(colour = "#00635350"), 
+        panel.grid.minor = element_blank(),
+        axis.ticks = element_blank()
+        ))
+
+
+```
+
+
+It is notable that the only two pairs of years where we can be very confident that increased investment was decrease rates of all three forms of intervention — children in care, children on child protection plans, and children in need — are found before 2012-13. In addition, the clustering of the posterior distribution for the pairs of years 2009-10 to 2010-11 and 2010-11 to 2011-12 indicates that the beneficial effect of investment was more uniform — less variable — across local authorities. 
+
+We also see a prolonged period of relative 'ineffectiveness' between 2011-12 and 2012-13 through to 2015-16 to 2016-17, where the effect of investment is either not reliably positive or negative but in some instances tended to be more consistent with increased rates of intervention. Coincidentally, this period of time dominates the data that made up the [National Audit Office's](https://www.nao.org.uk/wp-content/uploads/2019/01/Pressures-on-Childrens-Social-Care.pdf){target='_blank'} evaluation of the effects of spending in 2019.
+
+However, since 2017-18, we see continual improvements in the effectiveness of spending for reducing rates of children looked after, to the point at which, by 2020-21 to 2021-22, each £100 per child increase in spending on preventative and supportive services was associated with an average decrease of 7.9 per 10,000 in children looked after rate — almost four times the size of the average lagged effect for the entire period when averaged over.
+
+In some regards, the data indicates that there has never been a better time to invest in preventative and supportive services if the intention is to reduce the rates of children in care. However, we must be mindful of the fact that these services appear to be doing less to reduce earlier forms of intervention such as child protection plans and children in need rates, and that local authorities have become more variable in the effectiveness of their provision. 
+
+
+
+<br>
+
+![](img/la-variation.svg){width=20% fig-align='center'}
+
+### The effect of spending also varies across England
+
+<br>
+
+Another question this research sought to consider is whether the relationship between spending on preventative services and rates of intervention differed depending on the local authority. This was found to be the case. While in the majority of local authorities we would expect increased spending to be associated with decreases in children looked after (77% of local authorities) and child protection plan (85.4% of local authorities) rates, in some local authorities increased spending was more likely to be associated with increased intervention rates. 
+
+> Children and their families should be able to expect to be supported to the same extent, no matter where in the country they are, to live safely at home.
+
+This variation for children looked after rates is shown in figure 7. Around 31% of local authorities had an expected decrease in children looked after for an investment in preventative and supportive services that was at least twice the magnitude of the median expected decrease across all local authorities in England.
+
+
+
+```{r, echo = FALSE, eval = TRUE, out.height=700, fig.height=7, out.width = 550, fig.width = 5.5, fig.align='center', fig.cap="Figure 7: The above hex cartogram (developed by the House of Commons Library) shows the degree of variation in the average effect of preventative services spending on children looked after rates between 2009-10 and 2021-22 across local authorities in England.", message=FALSE, warning=FALSE}
+
+
+
+cla_eff_map <- read_rds("data/cla_eff_map.rds")
+
+cla_eff_map$layers[[1]]$aes_params$fill <- "#f0f0f0"
+
+cla_eff_map <- gginnards::delete_layers(cla_eff_map, "GeomText") +
+  theme(#legend.position = "none", 
+        plot.background = element_rect(fill = turquoise_dark, colour = turquoise_dark), 
+        panel.background = element_rect(fill = turquoise_dark, colour = turquoise_dark),
+        legend.background = element_rect(fill = turquoise_dark, colour = turquoise_dark),
+        legend.title = element_text(family = "Source Sans Pro", colour = "#f0f0f0"), 
+        legend.text = element_text(family = "Source Sans Pro", colour = "#f0f0f0")
+        ) +
+  scale_fill_gradientn(colours = c(turquoise_light, "#f0f0f0", ipse_gold), 
+                       values = scales::rescale(c(min(cla_eff_map$layers[[3]]$data$cla_lrp_plus_fixeff_median, na.rm = TRUE), 
+                                                  -2,
+                                                  0, 
+                                                  2, 
+                                                max(cla_eff_map$layers[[3]]$data$cla_lrp_plus_fixeff_median, na.rm = TRUE)))
+                       ) + 
+  guides(fill = guide_colorbar(title.position="top", 
+                             title.hjust = 0.5, barwidth = 10, barheight = 0.5)) 
+
+
+cowplot::ggdraw(cla_eff_map) + theme(panel.background = element_rect(fill = turquoise_dark, colour = turquoise_dark))
+
+
+
+```
+
+
+In some local authorities a cut of £100 per child in preventative spending might be associated with as much as a 15 or 20 per 10,000 increase in children looked after rate, in others a cut of this magnitude might be associated with no reliably positive or negative change. In addition, some local authorities seemed to have far more consistent outcomes related to children looked after and other rates than others, shown by the width of the yellow bars for each authority in figure 8 for children looked after rate. Equivalent plots for child protection plan and children in need rate effects are provided in the full report. 
+
+
+
+
+```{r, echo = FALSE, eval = TRUE, out.height=1100, fig.height=11, out.width = 550, fig.width = 5.5, fig.align='center', fig.cap="Figure 8: The cartogram hides the uncertainty we have in these estimates; greater uncertainty in this case typically means the local authorities tend to have different results from spending depending on the years analysed. The more that each local authority's *credible interval* lines overlap, the more statistically similar they are in their predicted effect.", message=FALSE, warning=FALSE}
+
+cla_eff_cat <- read_rds("data/la_re_cla.rds")
+
+cla_eff_cat$data %>%
+  ggplot(aes(y = la_name, yend = la_name)) +
+  geom_vline(xintercept = 0, colour = "#00816B") +
+  geom_segment(aes(x = lrp_plus_fixeff_lower.ci.89, xend = lrp_plus_fixeff_upper.ci.89), linewidth = 0.4, col = ipse_gold) +
+  geom_segment(aes(x = lrp_plus_fixeff_lower.ci.50, xend = lrp_plus_fixeff_upper.ci.50), linewidth = 0.8, col = ipse_gold) +
+  geom_point(aes(x = lrp_plus_fixeff_median), col = ipse_gold, size = 1.5) +
+  geom_text(aes(x = ifelse(lrp_plus_fixeff_median > mean(lrp_plus_fixeff_median),
+                           lrp_plus_fixeff_upper.ci.89 + 0.5, lrp_plus_fixeff_lower.ci.89 - 0.5),
+                y = la_name, 
+                hjust = ifelse(lrp_plus_fixeff_median > mean(lrp_plus_fixeff_median),
+                           0, 1),
+                label = la_name
+                ), colour = off_white, size = 1.75) +
+  theme_minimal() +
+  ylab("") +
+  xlab("Predicted effect of a £100 increase in preventative\nspending on CLA rate per 10,000 (2010-2022)") +
+  scale_x_continuous(limits = c(-35, 20),
+                     breaks = seq(-20, 10, 5),
+                     sec.axis = sec_axis(~ ., breaks = seq(-20, 10, 5), 
+                                         name = "Predicted effect of a £100 increase in preventative\nspending on CLA rate per 10,000 (2010-2022)")) +
+  theme(
+      panel.grid = element_blank(),
+      plot.background = element_rect(fill = "#006353", colour = "#006353"), 
+      panel.background = element_rect(fill = "#006353", colour = "#006353"),
+      legend.background = element_rect(fill = "#006353", colour = "#006353"),
+      text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"), 
+      axis.text.x = element_text(family = "Source Sans Pro", colour = "#f0f0f0"),
+      axis.text.y = element_blank(),
+      axis.ticks.x = element_line(colour = "#00816B"),
+      axis.ticks.y = element_blank()
+        ) 
+
+```
+
+
+However, we should not be reductive by claiming that some local authorities are spending money 'ineffectively' or counter-productively. Many local authorities that had a negative relationship between spending on preventative services and rates of children looked after might have a positive relationship between child protection plan rates and spending on preventative services, and *vice versa*. 
+
+There was also little indication of structural explanations for the variation in spending effects. The effect of spending did not seem to be related to the level of poverty in the local authority, but there was some evidence to suggest that local authorities that had kept their spending closer to 2009-10 levels had spending that was more effective for reducing children looked after rates, on average. There was also some evidence that local authorities that spent more on preventative services as a whole also had more effective spending per pound for reducing children in need rates.
+
+> Rather than diminishing returns, spending tended to become more effective the more that was spent when considering child in need rates. 
+
+Very few local authorities had spending that appeared to simultaneously decrease all of children in need, child protection plan, and children looked after rates by equivalent amounts. In these cases, variation may indicate the points in a typical progression through child welfare interventions where that local authority's preventative and supportive services are best placed to address perceived risks. 
+
+Less influential spending may also indicate greater resilience to the negative impacts of the cuts to service funding that many other local authorities have faced over the decade. Further, the relationship between spending and rates of intervention tells us nothing about the quality of the service delivered: the extent to which families feel heard and empowered; the impact of those services on the outcomes that families care about but which are not routinely measured; and so on.
+
+Rather, this variation should be considered a helpful tool for further investigation into the ways in which services might achieve broader aims of reducing rates of intervention that can be integrated with other forms of good practice. 
+
+<br>
+
+![](img/diversity.svg){width=20% fig-align='center'}
+
+### The relationship between spending and care rates is unequal across age, gender, and ethnic populations
+
+<br>
+
+As was the case with geography, it is also crucial to understand how the effects of spending may differ depending on the demographic characteristics of the child population. Ethnic inequalities in particular in the children's social care system have become an [increasingly important concern](https://www.nuffieldfjo.org.uk/resource/ethnicity-of-children-in-care-and-supervision-proceedings-in-england), with children from Black and Mixed Heritage backgrounds often overrepresented in the care system. Older children, too, make up an increasing proportion of the population of children in care. The proportion of all children in care who are aged 16 and older in care has grown from a three-year average of 21.8% between 2010-11 and 2012-13 to a three-year average of 25.5% between 2019-20 and 2021-22. During this latter period the median duration of time in care grew by only 10 to 20 days.
+
+Understanding the role that spending on preventative and supportive services might have on rates of care across different child populations can assist us in understanding the role that cuts to services might have had in reproducing or exacerbating inequalities in child welfare interventions, and may also help us understand how policies to reinvest in and expand the provision of preventative and supportive services can help us identify ways to ensure the effects of funding are equitable and actively work to reduce unjust inequalities in rates of intervention.
+
+Figure 9 presents an overview of some of the most prominent differences across child populations in the predicted effects of increased spending on preventative and supportive services. Increased spending tended to have the most beneficial effects for children aged over 16 and between the ages of 10 and 15, which may help explain growth in rates of care among these populations since 2010-11. Conversely, increased spending tended to be associated with increased rates of children aged 1 to 4 or 5 to 9 in care, suggesting that these services increase service awareness of potential risks at home without perhaps being equipped or able to deliver the kinds of support that might mitigate these perceived risks.
+
+Rates of care among male child populations also seemed to be more strongly associated with changes in spending than rates of care among female children. 
+
+While children from all ethnic backgrounds were negatively affected by cuts to spending on preventative services, the most prominent effects are found among the Black, Asian, and Mixed Heritage child populations (as well as children with 'Other' ethnic heritage, discussed later) with more muted, but still substantial, effects identified among the White/White British child population.
+
+
+
+```{r, echo = FALSE, eval = TRUE, out.height=700, fig.height=7, out.width = 550, fig.width = 5.5, fig.align='center', fig.cap="Figure 9: Which child populations' rates of care were the most and least affected by spending on preventative services between 2009-10 and 2021-22?", message=FALSE, warning=FALSE}
+
+most_tab <- tibble(
+  population = c("16+ Year Olds", "10-15 Year Olds", "Male", "Mixed heritage", "Asian/British Asian", "Black/Black British"),
+  effect = c(-11, -4.9, -5.2, -6, -5.2, -4.9)
+)
+
+least_tab <- tibble(
+  population = c("White/White British", "Female", "1 to 4 Year Olds", "5 to 9 Year Olds"),
+  effect = c(-1.7, -2.5, 5, 1)
+)
+
+summary_poeff <- bind_rows(most_tab, least_tab, .id = "tab")
+
+summary_poeff <- summary_poeff %>%
+  mutate(
+    tab = ifelse(tab=="1", "Most beneficial effects (relative)", "Least beneficial effects (relative)")
+  )
+
+# Fix ratio/scale
+
+summary_poeff %>%
+  mutate(
+    population = fct_reorder(population, desc(effect)),
+    tab = factor(tab, levels = c("Most beneficial effects (relative)", "Least beneficial effects (relative)"))
+  ) %>%
+  ggplot() +
+  geom_bar(aes(x = effect, y = population, fill = tab), stat = "identity") +
+  geom_text(aes(x = ifelse(effect<0, effect-0.3, effect+0.3), y = population, 
+                label = ifelse(effect<0, paste0(effect,"%"), paste0("+", effect, "%")),
+                colour = tab,
+                hjust = ifelse(effect<0, 1, 0)
+                )
+            ) +
+  scale_fill_manual(values = c(ipse_gold, turquoise_light)) +
+  scale_colour_manual(values = c(ipse_gold, turquoise_light)) +
+  xlim(c(-13, 6.5)) +
+  facet_grid(vars(tab), scales = "free_y", space = "free_y") +
+  ipse_theme +
+  theme(
+    legend.position = "none",
+    strip.background = element_rect(fill = turquoise_tint, colour = turquoise_tint),
+    strip.text = element_text(colour = off_white),
+    panel.grid.major.x = element_line(colour = turquoise_tint),
+    panel.grid.minor.x = element_line(colour = turquoise_tint),
+    panel.grid.major.y = element_blank(),
+    plot.background = element_rect(fill = "#006353", colour = "#006353"), 
+    panel.background = element_rect(fill = "#006353", colour = "#006353"),
+    legend.background = element_rect(fill = "#006353", colour = "#006353"),
+    text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"), 
+    axis.text.x = element_text(family = "Source Sans Pro", colour = "#f0f0f0"),
+    axis.text.y = element_text(family = "Source Sans Pro", colour = "#f0f0f0"),
+    axis.ticks.x = element_line(colour = "#00816B"),
+    axis.ticks.y = element_blank()
+  ) +
+  xlab("Predicted change in CLA Rate for a £100 per child\nincrease in preventative spending (%)") +
+  ylab("")
+
+
+```
+
+
+While these inequalities are important, we should also be mindful that they do not consider the role that intersectionality might play. That is, the importance of preventative services spending for Black boys who are aged 16 and over may be different to what we might assume from treating age, gender, and ethnicity as separate, 'additive', facets of a child's identity. Further research with more granular data is needed to explore such intersectional differences.
+
+The following sections consider each demographic population in turn, highlighting also how the predicted effects appeared to be mediated by rates of child poverty. 
+
+<br>
+
+
+#### Age
+
+<br>
+
+Between 2009-10 and 2021-22, spending on preventative services was found to benefit children who were one year old, children who were aged between 10 and 15, and children who were aged 16 years and over. Strong evidence of a beneficial effect was also found after removing any mediating effect via reductions in child poverty when analysing the data from 2014-15 to 2021-22 for all age groups other than 5 to 9 year olds, suggesting that for all other age groups increased spending on preventative services reduced rates of children in care above and beyond the impact they have on rates of child poverty. 
+
+These findings also showed that increased in child poverty had the greatest impact on rates of children in care among 1 to 4 year olds, with each 1 percentage point increase in child poverty within a local authority being associated with a 4.1% increase in rates of 1 to 4 year olds in care. Following this, children aged under 1 were most affected, with a 2.5% increase in care rates expected for a 1 percentage point increase in child poverty, then 5 to 9 year olds (+1.2%), children aged 16 and over (+1.1%), and lastly, children aged 10 to 15 (+0.4%). 
+
+
+```{r, echo = FALSE, eval = TRUE, out.height=300, fig.height=3, out.width = 550, fig.width = 5.5, fig.align='center', fig.cap="Figure 10: The incidence rate ratio communicates by what factor we would expect the rates of children looked after to increase by for a £100 per child increase in preventative spending or a 1 percentage point increase in child poverty. For example, for 16+ year olds we would expect a £100 per child increase in spending to result in the rate of children in care being multiplied by 0.887, which can also be read as a 11.3% decrease.", message=FALSE}
+
+combined_ineq_plot_1_age <- read_rds("data/combined_ineq_plot_1_age.rds")
+
+combined_ineq_plot_1_age$data %>%
+  filter(!str_detect(predictor, "IDACI|Between|Safeguarding")) %>% 
+  filter(str_detect(predictor, "Combined")) %>%
+  mutate(predictor = case_when(str_detect(predictor, "Preventative Spending") ~ "+£100pc spend two-year effect",
+                               str_detect(predictor, "Child Poverty") ~ "+1%p child poverty two-year effect"),
+         predictor = factor(predictor, levels = c("+£100pc spend two-year effect", "+£100pc next-year effect", "+1%p child poverty two-year effect"))
+         ) %>%
+  ggplot() +
+  geom_vline(xintercept = 1, colour = "#00816B") +
+  geom_linerange(aes(xmin = irr_q5.5, xmax = irr_q94.5, y = fct_rev(predictor), colour = fct_rev(predictor)), 
+               position = ggstance::position_dodgev(height=1), linewidth = 0.5) +
+  geom_point(aes(x = irr, y = fct_rev(predictor), colour = fct_rev(predictor)), 
+             position =ggstance::position_dodgev(height=1), size = 0.8) +
+  geom_text(aes(x = irr, y = fct_rev(predictor), colour = fct_rev(predictor), label = round(irr, 3)), size = 2.5, nudge_y = 0.2) +
+  facet_grid(models ~ outcome, scales = "free_y") +
+  scale_x_continuous(trans = scales::log_trans(), 
+                     limits = c(0.85, 1.10), 
+                     breaks = c(0.95, 1.05)) +
+  theme_minimal() +
+  theme(plot.background = element_rect(fill = "white", colour = "white"),
+        legend.position = "bottom") +
+  scale_colour_manual(values = c(ipse_lightgold, ipse_gold)) +
+  xlab("Incidence Rate Ratio") +
+  ylab("") +
+  ipse_theme +
+  ggeasy::easy_remove_legend() +
+  theme(
+      panel.grid = element_blank(),
+      plot.background = element_rect(fill = "#006353", colour = "#006353"), 
+      panel.background = element_rect(fill = "#006353", colour = "#006353"),
+      legend.background = element_rect(fill = "#006353", colour = "#006353"),
+      text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"), 
+      axis.text.x = element_text(family = "Source Sans Pro", colour = "#f0f0f0", size = 7),
+      axis.text.y =  element_text(family = "Source Sans Pro", colour = "#f0f0f0", size = 7),
+      axis.ticks.x = element_line(colour = "#00816B"),
+      axis.ticks.y = element_line(colour = "#00816B"), 
+      strip.text = element_text(family = "Source Sans Pro", colour = "#f0f0f0", size = 7)
+        ) 
+
+```
+
+These models measure relative (percentage) expected changes in rates of children in care due to the very different sized populations across local authorities, but approximate effects in terms of change per 10,000 can be estimated using average marginal effects. These represent the expected change in children in care per 10,000 for a statistically average local authority.
+
+For children aged 16 and older a 11.3% increase in children looked after rate would be equivalent to around a 17 per 10,000 increase in numbers of children in care per £100 spent per child. At an average reduction of £212 per child in spending when compared to 2009-10, we'd expect this to equate to just under 4,700 children nationally. For 10 to 15 year olds, we would expect a 4.9% increase in rates of care to equate to around a 4 per 10,000 increase in non-relative terms, which means we would expect around 3,500 more children of this age group in care in 2021-22 than if spending had remained at 2009-10 levels.
+
+
+```{r, echo = FALSE, eval = TRUE, out.height=550, fig.height=5.5, out.width = 550, fig.width = 5.5, fig.align='center', fig.cap="Figure 11: The correlation matrix shows how similar the effects for different age groups are when spending is increased or cut; values close to 1 mean that the two age groups experience an equivalent change in children looked after rates across the local authorities, values close to 0 mean they are essentially random.", message=FALSE}
+
+
+age_cormat_plot <- read_rds("data/agere_corrplot.rds")
+
+age_cormat_plot$data %>%
+  ggplot(aes(x = rowname, y = name, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient2(high = ipse_lightgold, mid = turquoise_dark, low = turquoise_light, limits = c(-1, 1)) +
+  geom_label(aes(label = value, colour = ifelse(value > 0.7, turquoise_dark, off_white))) +
+  scale_color_identity() +
+  theme_minimal() +
+  ggeasy::easy_remove_gridlines() +
+  ggeasy::easy_remove_legend() +
+  #ggeasy::easy_remove_axes() +
+  ylab("") +
+  xlab("") +
+  theme(
+      panel.grid = element_blank(),
+      plot.background = element_rect(fill = "#006353", colour = "#006353"), 
+      panel.background = element_rect(fill = "#006353", colour = "#006353"),
+      legend.background = element_rect(fill = "#006353", colour = "#006353"),
+      text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"), 
+      axis.text.x = element_text(family = "Source Sans Pro", colour = "#f0f0f0"),
+      axis.text.y =  element_text(family = "Source Sans Pro", colour = "#f0f0f0"),
+      axis.ticks.x = element_line(colour = "#00816B"),
+      axis.ticks.y = element_line(colour = "#00816B"), 
+      strip.text = element_text(family = "Source Sans Pro", colour = "#f0f0f0")
+        ) 
+
+
+```
+
+
+Another insight from this analysis was that the effects across age populations within different local authorities were not especially highly correlated (Figure 11). The effects of spending for very young children were fairly strongly correlated (R = 0.62), but there was very weak correlation between the effects of spending on rates of children in care aged over 16's and the effects of spending on younger children's rates of care, especially 1 to 4 and 5 to 9 year olds. 
+
+This implies that local authorities' preventative and supportive services rarely offered equivalent support with regards to preventing entry into care across all age groups, and that children of some ages were more likely to be supported than children of other ages depending on the local authority.  
+
+<br>
+
+#### Gender
+
+<br>
+
+There was strong evidence that spending on preventative services was effective for reducing rates of care for children regardless of their gender, though spending had a somewhat stronger effect on boys rates of care than girls. In addition, after accounting for the mediating effect of child poverty, spending continued to have a substantial additional effect on boys' rates of care while there was no evidence of an additional direct effect on girls' rates of care. 
+
+This may be partially due to the fact that the data suggested that increases in child poverty had a more pronounced association with girls' rates of care than it did with boys' rates of care.
+
+
+```{r, echo = FALSE, eval = TRUE, out.height=300, fig.height=3, out.width = 550, fig.width = 5.5, fig.align='center', fig.cap="Figure 12: As before, the figure shows the incidence rate ratios for male and female child populations. Female child populations tended to have smaller decreases in rates of children looked after when spending increased, and no expected change if the spending did not result in decreased child poverty.", message=FALSE}
+
+
+combined_ineq_plot_2_gender <- read_rds("data/combined_ineq_plot_2_gender.rds")
+
+combined_ineq_plot_2_gender$data %>%
+  filter(!str_detect(predictor, "IDACI|Between|Safeguarding")) %>% 
+  filter(str_detect(predictor, "Combined")) %>%
+  mutate(predictor = case_when(str_detect(predictor, "Preventative Spending") ~ "+£100pc spend two-year effect",
+                               str_detect(predictor, "Child Poverty") ~ "+1%p child poverty two-year effect"),
+         predictor = factor(predictor, levels = c("+£100pc spend two-year effect", "+£100pc next-year effect", "+1%p child poverty two-year effect"))
+         ) %>%
+  ggplot() +
+  geom_vline(xintercept = 1, colour = "#00816B") +
+  geom_linerange(aes(xmin = irr_q5.5, xmax = irr_q94.5, y = fct_rev(predictor), colour = fct_rev(predictor)), 
+               position = ggstance::position_dodgev(height=1), linewidth = 0.5) +
+  geom_point(aes(x = irr, y = fct_rev(predictor), colour = fct_rev(predictor)), 
+             position =ggstance::position_dodgev(height=1), size = 0.8) +
+  geom_text(aes(x = irr, y = fct_rev(predictor), colour = fct_rev(predictor), label = round(irr, 3)), size = 2.5, nudge_y = 0.2) +
+  facet_grid(models ~ outcome, scales = "free_y") +
+  scale_x_continuous(trans = scales::log_trans(), 
+                     limits = c(0.94, 1.05), 
+                     breaks = c(0.95, 1.05)) +
+  theme_minimal() +
+  theme(plot.background = element_rect(fill = "white", colour = "white"),
+        legend.position = "bottom") +
+  scale_colour_manual(values = c(ipse_lightgold, ipse_gold)) +
+  xlab("Incidence Rate Ratio") +
+  ylab("") +
+  ipse_theme +
+  ggeasy::easy_remove_legend() +
+  theme(
+      panel.grid = element_blank(),
+      plot.background = element_rect(fill = "#006353", colour = "#006353"), 
+      panel.background = element_rect(fill = "#006353", colour = "#006353"),
+      legend.background = element_rect(fill = "#006353", colour = "#006353"),
+      text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"), 
+      axis.text.x = element_text(family = "Source Sans Pro", colour = "#f0f0f0", size = 7),
+      axis.text.y =  element_text(family = "Source Sans Pro", colour = "#f0f0f0", size = 7),
+      axis.ticks.x = element_line(colour = "#00816B"),
+      axis.ticks.y = element_line(colour = "#00816B"), 
+      strip.text = element_text(family = "Source Sans Pro", colour = "#f0f0f0", size = 7)
+        ) 
+
+
+```
+
+
+The effectiveness of spending for reducing rates of care for boys and girls within the same local authorities were quite strongly correlated (R=0.793), which indicates that local authorities with effective spending for reducing rates of care among male children also tend to have effective spending for reducing rates of care among female children, and *vice versa*.
+
+
+<br>
+
+#### Ethnicity
+
+<br>
+
+The study found very substantial differences in the predicted effect of changes in spending on preventative services on rates of children in care across different ethnic groups. Some caution is suggested in the interpretation of these results due to the amount of censored data due to small numbers. For example, 41.5% of data for Ethnic Minority: Other children in care numbers was censored due to small counts, as was 32.2% of data for Asian children looked after and 27.3% of data for Black children. These missing data have been imputed using current best practice, and more information is provided regarding multiple imputation in the full report. In addition, the analysis was limited by the '5 group' ONS classification of ethnicity, which can obscure differences between, for example, Black children with African Heritage and Black children with Carribean heritage, or between Asian children with Indian heritage when compared to Asian children with Pakistani or Bangladeshi heritage. While some estimates may lack some precision, the magnitude of the differences observed are unlikely to have been caused as a consequence of the missing data when treated in this way.
+
+All ethnic minority child populations had stronger associations between preventative and supportive spending and children looked after rates than the White British population, but all groups of children were predicted to have see decreases in rates of care if spending on preventative services were increased. The effect of increased spending was especially prominent (-21.5%) for children from 'other' ethnic groups. Following this, children with mixed heritage were predicted to benefit most from increased spending in preventative services (-6%), then children with Asian (-5.2%) or Black heritage (-4.9%). Children in the White/White British population saw a smaller, but highly reliable, reduction of 1.7% per £100 per child spent on preventative services. 
+
+One paradoxical finding, however, was that there appeared to be no direct additional beneficial effects of spending for all ethnic minority populations except for children with 'other' ethnic heritage once the mediating effect of poverty was included in the model. This suggests that the positive effects of increased spending on preventative services for these minority populations has been tied to the extent to which these services can affect child poverty. 
+
+
+```{r, echo = FALSE, eval = TRUE, out.height=300, fig.height=3, out.width = 550, fig.width = 5.5, fig.align='center', message=FALSE}
+
+
+combined_ineq_plot_3_ethnicity <- read_rds("data/combined_ineq_plot_3_ethnicity.rds")
+
+combined_ineq_plot_3_ethnicity$data %>%
+  filter(!outcome == "Other Ethnic Group") %>%
+  filter(!str_detect(predictor, "IDACI|Between|Safeguarding")) %>% 
+  filter(str_detect(predictor, "Combined")) %>%
+  mutate(predictor = case_when(str_detect(predictor, "Preventative Spending") ~ "+£100pc spend two-year effect",
+                               str_detect(predictor, "Child Poverty") ~ "+1%p child poverty two-year effect"),
+         predictor = factor(predictor, levels = c("+£100pc spend two-year effect", "+£100pc next-year effect", "+1%p child poverty two-year effect"))
+         ) %>%
+  ggplot() +
+  geom_vline(xintercept = 1, colour = "#00816B") +
+  geom_linerange(aes(xmin = irr_q5.5, xmax = irr_q94.5, y = fct_rev(predictor), colour = fct_rev(predictor)), 
+               position = ggstance::position_dodgev(height=1), linewidth = 0.5) +
+  geom_point(aes(x = irr, y = fct_rev(predictor), colour = fct_rev(predictor)), 
+             position =ggstance::position_dodgev(height=1), size = 0.8) +
+  geom_text(aes(x = irr, y = fct_rev(predictor), colour = fct_rev(predictor), label = round(irr, 3)), size = 2.5, nudge_y = 0.2) +
+  facet_grid(models ~ outcome, scales = "free_y") +
+  scale_x_continuous(trans = scales::log_trans(), 
+                     limits = c(0.92, 1.10), 
+                     breaks = c(0.95, 1.05)) +
+  theme_minimal() +
+  theme(plot.background = element_rect(fill = "white", colour = "white"),
+        legend.position = "bottom") +
+  scale_colour_manual(values = c(ipse_lightgold, ipse_gold)) +
+  xlab("Incidence Rate Ratio") +
+  ylab("") +
+  ipse_theme +
+  ggeasy::easy_remove_legend() +
+  theme(
+      panel.grid = element_blank(),
+      plot.background = element_rect(fill = "#006353", colour = "#006353"), 
+      panel.background = element_rect(fill = "#006353", colour = "#006353"),
+      legend.background = element_rect(fill = "#006353", colour = "#006353"),
+      text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"), 
+      axis.text.x = element_text(family = "Source Sans Pro", colour = "#f0f0f0", size = 7),
+      axis.text.y =  element_text(family = "Source Sans Pro", colour = "#f0f0f0", size = 7),
+      axis.ticks.x = element_line(colour = "#00816B"),
+      axis.ticks.y = element_line(colour = "#00816B"), 
+      strip.text = element_text(family = "Source Sans Pro", colour = "#f0f0f0", size = 7)
+        ) 
+
+
+```
+
+```{r, echo = FALSE, eval = TRUE, out.height=300, fig.height=3, out.width = 550, fig.width = 5.5, fig.align='center', fig.cap="Figure 13: Variation in the predicted effect by ethnic group is shown in the above two plots, with a different scale present for children from 'Other' ethnic groups, for whom the predicted effect of spending was particularly dramatic.", message=FALSE}
+
+combined_ineq_plot_3_ethnicity$data %>%
+  filter(outcome == "Other Ethnic Group") %>%
+  filter(!str_detect(predictor, "IDACI|Between|Safeguarding")) %>% 
+  filter(str_detect(predictor, "Combined")) %>%
+  mutate(predictor = case_when(str_detect(predictor, "Preventative Spending") ~ "+£100pc spend two-year effect",
+                               str_detect(predictor, "Child Poverty") ~ "+1%p child poverty two-year effect"),
+         predictor = factor(predictor, levels = c("+£100pc spend two-year effect", "+£100pc next-year effect", "+1%p child poverty two-year effect"))
+         ) %>%
+  ggplot() +
+  geom_vline(xintercept = 1, colour = "#00816B") +
+  geom_linerange(aes(xmin = irr_q5.5, xmax = irr_q94.5, y = fct_rev(predictor), colour = fct_rev(predictor)), 
+               position = ggstance::position_dodgev(height=1), linewidth = 0.5) +
+  geom_point(aes(x = irr, y = fct_rev(predictor), colour = fct_rev(predictor)), 
+             position =ggstance::position_dodgev(height=1), size = 0.8) +
+  geom_text(aes(x = irr, y = fct_rev(predictor), colour = fct_rev(predictor), label = round(irr, 3)), size = 2.5, nudge_y = 0.2) +
+  facet_grid(models ~ outcome, scales = "free_y") +
+  scale_x_continuous(trans = scales::log_trans(), 
+                     limits = c(0.75, 1.10), 
+                     breaks = c(0.75, 0.85, 0.95, 1.05)) +
+  theme_minimal() +
+  theme(plot.background = element_rect(fill = "white", colour = "white"),
+        legend.position = "bottom") +
+  scale_colour_manual(values = c(ipse_lightgold, ipse_gold)) +
+  xlab("Incidence Rate Ratio") +
+  ylab("") +
+  ipse_theme +
+  ggeasy::easy_remove_legend() +
+  theme(
+      panel.grid = element_blank(),
+      plot.background = element_rect(fill = "#006353", colour = "#006353"), 
+      panel.background = element_rect(fill = "#006353", colour = "#006353"),
+      legend.background = element_rect(fill = "#006353", colour = "#006353"),
+      text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"), 
+      axis.text.x = element_text(family = "Source Sans Pro", colour = "#f0f0f0", size = 7),
+      axis.text.y =  element_text(family = "Source Sans Pro", colour = "#f0f0f0", size = 7),
+      axis.ticks.x = element_line(colour = "#00816B"),
+      axis.ticks.y = element_line(colour = "#00816B"), 
+      strip.text = element_text(family = "Source Sans Pro", colour = "#f0f0f0", size = 7)
+        ) 
+
+
+```
+
+In addition, increases in child poverty within local authorities over time have had a larger impact on rates of Black, Mixed Heritage, and 'Other' children in care than they have on rates of White or Asian children in care. A one percentage point increase in child poverty within a local authority was associated with a 1.5% increase in the rate of White children in care, and a 0.9% increase in the rate of Asian children in care, but a 2.1% increase in the rate of Black children in care, a 2.5% increase in the rate of 'other ethnic group' children in care, and a 3.5% increase in the rate of Mixed Heritage children in care.
+
+
+```{r, echo = FALSE, eval = TRUE, out.height=550, fig.height=5.5, out.width = 550, fig.width = 5.5, fig.align='center', fig.cap="Figure 14: The correlation matrix shows a quite alarming lack of correlation between different ethnic populations, suggesting that the benefits of spending more money on preventative services for children have been quite unequal depending on their ethnicity", message=FALSE}
+
+
+eth_cormat_plot <- read_rds("data/eth_cormat_plot.rds")
+
+eth_cormat_plot$data %>%
+  ggplot(aes(x = rowname, y = name, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient2(high = ipse_lightgold, mid = turquoise_dark, low = turquoise_light, limits = c(-1, 1)) +
+  geom_label(aes(label = value), colour = off_white) +
+  theme_minimal() +
+  ggeasy::easy_remove_gridlines() +
+  ggeasy::easy_remove_legend() +
+  #ggeasy::easy_remove_axes() +
+  ylab("") +
+  xlab("") +
+  theme(
+      panel.grid = element_blank(),
+      plot.background = element_rect(fill = "#006353", colour = "#006353"), 
+      panel.background = element_rect(fill = "#006353", colour = "#006353"),
+      legend.background = element_rect(fill = "#006353", colour = "#006353"),
+      text = element_text(family = "Source Sans Pro", colour = "#f0f0f0"), 
+      axis.text.x = element_text(family = "Source Sans Pro", colour = "#f0f0f0"),
+      axis.text.y =  element_text(family = "Source Sans Pro", colour = "#f0f0f0"),
+      axis.ticks.x = element_line(colour = "#00816B"),
+      axis.ticks.y = element_line(colour = "#00816B"), 
+      strip.text = element_text(family = "Source Sans Pro", colour = "#f0f0f0")
+        ) 
+
+
+```
+
+
+There was a concerning lack of correlation across the effects of spending on rates of children in care within local authorities across the five ethnic groups. This essentially means that the services that local authorities offer to support children and families rarely benefit all ethnic populations within the local authority equitably. This may be due to the location and distribution of services, the accessibility of services, or the provision of funding to support services at a local level, and warrants further investigation. 
+
+
+<br>
+
+![](img/thyme-white.svg){width=20% fig-align='center'}
+
+### Conclusions
+
+<br>
+
+Since 2009-10 spending on preventative and supportive services for children and their families has been reduced almost every year on average until 2021-22. The full extent of the impact that this has had on the growing numbers of children in care has not, before this study, been comprehensively established. This research project found that there was a substantial and highly credible link between variation in spending on preventative services within local authorities over time, and their rates of children in care. Around 10% of the children in care in England on any given day might still be living safely with their families of origin had preventative services spending been protected at 2009-10 levels. 
+
+This study also reasserts the prominent impact that child poverty has on rates of children in care or placed on child protection plans. The evidence that policies that address both poverty and the availability of universal and preventative support continues to grow. Together, this project and the [Child Welfare Inequalities Project](https://pure.hud.ac.uk/ws/files/21398145/CWIP_Final_Report.pdf), have demonstrated that building a socially just environment where all children and families are supported to flourish is the best and fairest way to address the unsustainable crisis in children's social care.
+
+Such foundations create the conditions for alternative outcomes to the care system when child protection investigations are necessary, and are likely to lead to net economic benefits, as well as numerous intangible social and moral benefits. 
+
+Cuts to preventative and supportive services have most negatively affected minoritised child populations. They have also disproportionately affected older children, who have often found that their needs are sidelined so that services and interventions for very young children can be maintained or expanded. 
+
+However, this also means that reinvesting and expanding investment in preventative and supportive services can help address the care crisis while also making the child welfare system more equitable. Rather than asking whether we can afford to invest in support for families and children, we should be asking whether we can afford not to.
+
+
+
+<br><br><br><br><br>

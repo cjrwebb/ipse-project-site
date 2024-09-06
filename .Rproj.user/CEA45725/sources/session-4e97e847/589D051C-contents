@@ -1,0 +1,27 @@
+---
+title: "Open Data"
+image: img/open-research.svg
+toc: false
+about:
+  template: trestles
+---
+
+
+# Open Data and Open Research Code Repositories
+
+All code and data derivatives used to generate the results from this study will be made available in an open format in order to promote reproducibility, transparency, and trust in the research findings. All code is released under the [MIT license](https://opensource.org/license/mit){target="_blank"}, which permits wide reuse of the data and code for any purpose, unless otherwise stated. Please note that licenses of original copyright holders for some software packages and data releases (namely, data relased under the [OGL3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/){target="_blank"} apply. All open access presentations and reports are published under a [CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.en){target="_blank"} license, with the code used to generate them published under [GPL3.0+](https://www.gnu.org/licenses/gpl-3.0.en.html){target="_blank"}.
+
+Repositories containing open source analysis code will be published alongside journal articles on their acceptance. Where appropriate, code will be made available on the University of Sheffield ORDA system, on Github, and on osf.io. 
+
+****
+
+<br>
+
+### Published Repositories
+
+<br>
+
+* **Investing in Prevention: Data Tidying Repository**. This repository contains copies of all secondary data and their sources alongside the code required to tidy, harmonise, and otherwise prepare the data for analysis (such as adjusting for inflation). \[[github](https://github.com/cjrwebb/ipse-data-tidying-repo){target="_blank"}\] \[[ORDA](https://doi.org/10.15131/shef.data.26348359.v1){target="_blank"}\]
+
+* **Investing in Prevention & Support: Key findings presentation**. This repository contains the code used to generate the key findings slidedeck. \[[ORDA](https://doi.org/10.15131/shef.data.26348338.v1){target="_blank"}\]
+

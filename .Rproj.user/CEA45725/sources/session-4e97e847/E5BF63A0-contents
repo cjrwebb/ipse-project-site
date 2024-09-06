@@ -1,0 +1,403 @@
+---
+output: pdf_document
+editor_options: 
+  chunk_output_type: console
+header-includes:
+  - \usepackage{setspace}
+---
+\newpage
+\onehalfspacing
+
+<!----------- COVER SHEET INFORMATION: MAKE SURE YOU CHECK YOUR COVER SHEET INFORMATION IS ACCURATE ----------------->
+
+```{r, echo = FALSE, results='asis'}
+
+# COVER SHEET INFORMATION
+
+module_code <- "SMI610"
+reg_number  <- "REPLACE THIS TEXT WITH YOUR STUDENT REGISTRATION NUMBER"
+title <-       "Rapping up the big apple: The importance and influence of collaboration in New York City’s Rap scene"
+word_count <-  "2143"
+
+
+################### ORIGINAL WORK STATEMENT ################-
+
+ow_s <- "By submitting through Turnitin, you are confirming that you have read and understood the policies on plagiarism and unfair means as set out in the Assessment Handbook, Programme Handbook, and the University website, and that this assignment is entirely your own work, and does not include the work of any other person, unless it is properly acknowledged and referenced. Disciplinary action will be taken where unfair means and plagiarism are used."
+
+###### Please read the above statement and enter "YES" in the following field to confirm that this is your own original work. #####-
+
+ow_r <- "YES"
+
+
+################### LEARNING SUPPORT PLAN STATEMENT ################-
+
+lsp_s <- "I wish to indicate that I have a Learning Support Plan - because I am a student with Specific Learning Difficulties AND that I have registered with the University’s Disability and Dyslexia Support Service (DDSS). The work will not be marked differently, however **markers** will be aware that more detailed feedback may be useful for students with specific learning difficulties – Please see: http://www.sheffield.ac.uk/ssid/disability"
+
+###### Please read the above statement and enter "YES" in the following field if you agree to the above statement and wish to indicate you have a Learning Support Plan. #####-
+
+lsp_r <- "NO"
+
+
+################### CODE STATEMENT ################-
+
+code_s <- "I confirm that I have included all code required to reproduce my work, either inline with my statistical output or in an appendix. I understand that penalties may be applied if I do not provide all of the code required by the assessment handbook."
+
+###### Please read the above statement and enter "YES" in the following field to indicate that all code used in your assessment has been included below according to the assessment handbook. #####-
+
+code_r <- "YES"
+
+
+# The following code will create your cover sheet. You do not need to change anything below. 
+
+cat(
+  paste0("\\begin{null}\n\\begin{hfill}\n", date(), "\n\\end{hfill}\n\\end{null}"),
+  "\n\\leavevmode\\newline\n\\leavevmode\\newline\n\\leavevmode\\newline\n\\leavevmode\\newline\n",
+  paste(paste("# MODULE CODE: ", module_code, "\n\\medbreak\n"), 
+      paste("# REGISTRATION NUMBER: ", reg_number, "\n\\medbreak\n"), 
+      paste("# TITLE: ", title, "\n\\medbreak\n"), 
+      paste("# WORD COUNT: ", word_count, "\n\\medbreak\n"), 
+            sep = " \n\n"), 
+    "\n\\leavevmode\\smallbreak\n",
+    paste(">", ow_s), ifelse( grepl("yes", tolower(ow_r)) == TRUE , 
+                             ifelse( grepl("no", tolower(ow_r)) == TRUE, " [ ]", " [x]" ), " [ ]"),
+    "\n\\leavevmode\\smallbreak\n",
+    paste(">", lsp_s), ifelse( grepl("yes", tolower(lsp_r)) == TRUE, 
+                             ifelse( grepl("no", tolower(lsp_r)) == TRUE, " [ ]", " [x]" ), " [ ]"),
+    "\n\\leavevmode\\smallbreak\n",
+    paste(">", code_s), ifelse( grepl("yes", tolower(code_r)) == TRUE, 
+                             ifelse( grepl("no", tolower(code_r)) == TRUE, " [ ]", " [x]" ), " [ ]"),
+  "\\newpage",
+    sep = ""
+    )
+
+```
+
+```{r, include=FALSE}
+
+#################################################################################
+#################################################################################
+###########################           IMPORTANT       ###########################
+#################################################################################
+#################################################################################
+
+#' Before you can "knit" this document - a.k.a. turn it into a pdf - you need to
+#' install LaTeX on your computer (this is a typesetting language). The easiest
+#' way to do this is to use the tinytex package in R.
+
+#' Uncomment and run the two lines of code below (and remember to re-comment them
+#' afterwards otherwise it will reinstall itself every time you knit the document!) 
+#' to install LaTeX onto your computer. After this, test everything is working
+#' by clicking the "Knit" button at the top of your script in Rstudio.
+
+#install.packages('tinytex')
+#tinytex::install_tinytex()
+
+#' If this does not work, please speak to one of us in class and, for now, change
+#' the "pdf_document" text above (where it says: output: pdf_document) to 
+#' html_document as a temporary solution.
+
+#################################################################################
+#################################################################################
+#################################################################################
+#################################################################################
+
+
+
+```
+
+
+
+
+
+<!------- START OF ASSESSMENT TEXT ------->
+
+
+
+
+# Rapping up the big apple: The importance and influence of collaboration in New York City’s Rap scene
+
+## Research Aims:
+To explore the network of collaborations between New York City rap artists
+To better understand if there are geographic relationships within the network of NYC rappers
+To find which rappers have the highest ability to influence and facilitate collaborations
+
+## Literature and Background
+As the undisputed birthplace of hip hop (Duma, 2023), the boroughs of New York City have amplified the culture of marginalised existence of isolated urban neighbourhoods since the 1970s (French, 2017). Each of NYC’s neighbourhoods have historically developed their own individual and distinct cultural identities through music, dance, graffiti and other forms of creative expression (Forman, 2000). Rap has been referred to as New York City’s “sound system”, being used by marginalised “black youth…twisting technology into new cultural shape” (Chambers, 1985) in areas such as Harlem, Brooklyn and the Bronx. This music can be observed to show the ways in which space and race organise in social practices or narrative and lyrical form (Forman, 2000) to showcase the social injustices in artists home boroughs (French, 2017). 
+
+The lyrical construction of rap commonly displays a pronounced emphasis on place and loyalty (Forman, 2002). There are explicit references to neighbourhoods and zip codes (ibid.) which both provide artists twitch inspiration as well as connect through regional affiliation and attached relationships to space. Emerging from gang culture of protected space, early NYC rappers held “terriroties” (Flash in Forman, 2000), illuminating how areas became claimed through continuing cultural practice which circulated who could be accepted and recognised within social and geographic boundaries (Forman, 2000). Divisions between areas often manifested in collaboration patterns, with hip hop and rap artists often working solely within their boroughs and scarcely crossing into others.
+
+Hip hop has evolved into one of New York City’s most internationalised cultural products (Blum, 2015); and with this the socio-geographic boundaries have changed and morphed. Territorial rap now falls beyond the big apple itself, with rap crews across America exploring their locational culture through music. The battle between the East and West coast during the 1990s altered the landscape forever, with many questioning whether geographic claims within music became more nationally scoped, moving away from small scale zip-code battles. This has also promoted more collaboration within rap across organised lines. Gone are the days of the legendary ‘Bridge Wars’, which saw BDP of the Bronx and the Juice Crew of Queens battling for status across the river from one another.
+
+It is also worth noting the importance of collaboration within hip hop outside of geographical constraints. Collaboration and group membership have been continued vital components of the genre, with group cohesion and collaboration going further than geographic claim making or lyrical posturing (Komaniecki, 2017). During the formative years of the genre in NYC rap groups were common not just in place of gang membership and locational battles, but rather to share collective consciousness and skill across artists (Adams, 2016). As these groups have declined in popularity as time has gone on, collaborations such as song features or coproduction of albums have kept the tradition alive. For example, when looking at the ten best selling rap and hip hop albums of 2014, all ten feature multiple guest verses from rappers who are not the solo artist it was released under (https://www.billboard.com/charts/year-end/2014/rap-albums in Komaniecki, 2017). 
+
+This project aims to explore the current social rap network in New York City through collaborations shown within Spotify streaming data, creating a social network to showcase the collaborations between artists and using biographical information to subset artists into their regions to visualise whether or not there is cross boundary collaboration between artists in the modern day. Data on popularity from the dataset have also been used to understand the level of reach collaborations hold, hoping to understand whether there is a certain number of streams or popularity needed to collaborate with certain artists within the genre. 
+
+
+## Data
+The data used for this project was found on Kaggle at the following link: Spotify Artist Feature Collaboration Network (kaggle.com)
+This data was formulated of two data sets, one showing the edges between artists, with two columns, one for the main artist from a song and the other for the featuring artist. The other dataset was artist information which had been scraped from Spotify API. It showed information such as the artists name, spotify code, genre of music, followers, chart hits and popularity. These datasets could be used very easily in conjunction with one another as they both included the specific artist spotify code. 
+https://www.kaggle.com/datasets/jfreyberg/spotify-artist-feature-collaboration-network
+
+## Methodology
+Social Network Analysis was chosen for this project. The dataset itself was chosen specifically due to its ability to be utilised in a social network analysing capacity. Social networks are comprised at their core of relationships linking individual human beings (Freeman, 2004). The approach of exploring and analysing these networks finds its foundations in the idea that social ties have important consequences for involved actors (ibid). The main objective of using data as represented by networks of interconnected objects is to extract further information than traditional data analysis techniques (Tabassum et al. 2018). The analysis completed in this project aimed to highlight the integration within the NYC rap scene showing how the genre has allowed for artists to interconnect their work across district divides. 
+
+In order to complete the network analysis a number of steps had to take place. The genre variable was converted to be a character type and filtered to only include those categorised as “nyc rap”. Certain columns (such as the id column) were extracted and made into vectors, and these were subsequently filtered further to only include those outputs within the nyc rap genre for both datasets. The two datasets were merged and the id columns for the edges dataset were replaced with the artists name for greater user readability (allowing for the artists name to show on visualisations rather than their long individualised spotify artist code). A continued error was encountered as there appeared to be vectors in the edges dataset that were not present in the nodes data. This was resolved by filtering the data manually with only the names of artists who featured on collaborations within the nyc rap genre. This lowered the data points significantly from 53 to 23.
+
+
+## Findings and Discussions
+ The nodes were then graphed as shown below:
+
+Figure 1.
+I was not satisfied with this original network. Using biographical information on each artist which was found through internet searches of their various spotify, apple music and wikipedia profiles their home borough was then added to the network through manual filtering to produce Figure 2. 
+
+Figure 2.
+This was then adjusted again to produce the rounded network in figure 3.
+
+Figure 3.
+From these networks we can see which artists were most likely to collaborate with other artists as well as which area of New York City these artists associate themselves with. Sleepy Hallow, as a Brooklyn artist himself, had five of his six collaborations with other Brooklyn artists. Sheff G (also from Brooklyn) collaborated with three Brooklyn artists,  two “other” artists and one artist from the Bronx. The data itself held majoritively Brooklyn based artists and thus may not be the most accurate in showcasing cross geographical collaborations, but does show the newer possibilities of open collaborations between artists. 
+
+I then went on to assess the betweenness, closeness and degree of the network. The degree of a network represents the number of direct connections one node has to another. Lil Tjay and Uncle Murda have the highest degree of connections with 6 each. Sleepy Hallow and Sheff G have a degree of 5 and 6 respectively and thus are also highly connected within this network. Artists such as HL8 and Don Q only have one connection which shows a low level of collaboration. Betweenness is a measure of the fraction of shortest paths that pass through a given node. For this network, Sheff G has a betweenness score of 45, showing his crucial role in the connectivity of the New York City rap scene. Rowdy Rebel (score of 29), Bobby Shmurda (score of 11) and Lil Tjay (score of 19.5) all also have relatively high scores and thus have a large involvement in collaborations. Closeness is  measure of the length of the shortest path to each node. Uncle Murda has the highest closeness score of 0.1667, which positions him well within the sphere of influence for the network. From this analysis, Uncle Murda, Sheff G and Lil Tjay appear to be the artists with the highest ability to influence and facilitate collaborations within this network. 
+
+In order to see if this influence within the network mirrored the influence of the public, I created a bar chart showing the artists’ followers on spotify. This is shown in figure 4:
+
+Figure 4
+From this barchart we can see that Lil Tjay has the highest number of followers by far in comparison to other artists. Bobby Shmurda, Young M.A and Sleepy Hallow have the next highest, all falling into a similar amount. This is interesting as Young M.A had only one connection in the network (it is of note that she is also the only female artist in this subset of data) and thus her influence in the public sphere does not equate connections within the rap artist network. Bobby Shmurda had some connections and is the artist with the most consistent influence between both the public sphere and the social network. Sheff G, who was the most influential within the network, falls within the middle ground of Spotify followers. 
+
+I created a similar bar chart with the popularity score from the dataset which is shown in Figure 5. This score is from the hidden artist tool Spotify provides of the popularity index, which compares on a 1-100 scale how popular an artists’ song is in comparison to other songs on their database.
+
+Figure 5.
+This popularity score shows similar trends as the artists’ followers. Lil Tjay is once again on the upper end of the spectrum. When using this index, Sheff G and Sleepy Hallow are closely second and third which more accurately mirrors the connections they held in the network.
+
+## Conclusion
+Ultimately from this analysis, the social network built up between rap artists in New York City shows collaboration between artists from a number of NYC boroughs. Artists from Brooklyn appear to have the largest influence within this network, with artists such as Lil Tjay and Sheff G having high influence both within the network and in the public sphere. By using measures of centrality such as the closeness, betweenness and degree of nodes I identified key figures within the network who likely have high influence over the genre as a whole. From other visualisations such as bar charts we can see that the influence held within the social network itself does not necessarily correlate with popularity on Spotify within the public sphere. Social Network Analysis did prove, however, to be an effective tool for visualising the social structures within the NYC rap scene and allowed for easy identification of influential artists and ability to visualise the flow of influence across the network. Broader social, geographical and cultural dynamics also impact upon the relationships shown within this network which were briefly touched upon in the literature exploration at the beginning of the paper. There is a valuable frame for future research and further analysis provided by this paper. If time allowed it would be interesting to explore these relationships further and compare the collaborative nature of the New York scene with similar West Coast hip hop scenes or other areas across the United States. The data utilised in this paper was also limited in terms of the number of artists available as well as the demographic information of each artist which had to be found through extensive outside searching. In the future, a more expansive dataset would have been used which had a larger number of artists from different boroughs across the city as well as different gender, racial and cultural backgrounds to gauge a more extensive understanding of relationships within this music genre. 
+
+## Bibliography
+Adams, K. (2016), Playing with Beats and Playing with Cats: Meow the Jewels, Remixes, and Reinterpretations, MTO. Available at: MTO 22.3: Adams, Playing with Beats and Playing with Cats (mtosmt.org) [accessed 18/08/24]
+Blum, S. (2015), Here is a map of new york city hip hop artists, borough by borough, Brooklyn Magazine. Available at: Here is a Map of New York City Hip-Hop Artists, Borough-by-Borough - Brooklyn Magazine (bkmag.com) [accessed 18/08/24]
+Chambers, I. (1985), Urban rhythms: pop music and popular culture, Macmillan.
+Duma, M. (2023), A guide to new york hip-hop: unpacking the sound of rap’s birthplace from the Bronx to Staten Island, Grammy Awards. Available at: A Guide To New York Hip-Hop: Unpacking The Sound Of Rap's Birthplace From The Bronx To Staten Island | GRAMMY.com [accessed 18/08/24]
+Freeman, L. (2004), The development of social network analysis, Research Gate. Available at: (PDF) The Development of Social Network Analysis (researchgate.net) [accessed 18/08/24]
+French, K. (2015), Geography of american rap: rap diffusion and rap centres, GeoJournal, Springer. Available at: Geography of American rap: rap diffusion and rap centers | GeoJournal (springer.com) [accessed 18/08/24]
+Forman, M. (2002), The hood comes first: race, space and place in rap and hip hop, Wesleyan University Press. 
+Komaniecki, R. (2017), Analysing collaborative flow in rap music, MTO. Available at: MTO 23.4: Komaniecki, Analyzing Collaborative Flow in Rap Music (mtosmt.org) [accessed 18/08/24]
+Tabassum et al. (2018), Social network analysis: an overview, WIREs data mining and knowledge discovery, WIREs. Available at: Social network analysis: An overview - Tabassum - 2018 - WIREs Data Mining and Knowledge Discovery - Wiley Online Library [accessed 18/08/24]
+
+
+
+
+```{r}
+
+# A standard R chunk - use these to put your code in
+
+
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(igraph)
+library(tibble)
+library(ggraph)
+```
+```{r}
+install.packages("tibble")
+```
+
+```{r}
+library(readr)
+spotify_edges <- read_csv("edges.csv")
+View(spotify_edges)
+```
+```{r}
+
+```
+
+
+```{r}
+library(readr)
+spotify_nodes <- read_csv("nodes.csv")
+View(spotify_nodes)
+```
+
+
+```{r}
+#making genres into a character 
+spotify_nodes$genres <- trimws(as.character(spotify_nodes$genres))
+unique(spotify_nodes$genres)
+
+#filtering nodes to just those including nyc rap
+nyc_nodes <- spotify_nodes[grepl("nyc rap", tolower(spotify_nodes$genres)), ]
+nyc_nodes
+```
+
+
+```{r}
+install.packages("dplyr")
+library(dplyr)
+```
+```{r}
+#extracting the different columns to become vectors 
+nycrap_ids_list <- list(nyc_nodes$spotify_id)
+nycrap_names_list <- list(nyc_nodes$name)
+
+#filtering so there is only edges for the artists who are in the nyc rap genre
+spotify_ids <- nyc_nodes$spotify_id
+spotify_edges_filtered <- spotify_edges %>%
+  filter(id_0 %in% spotify_ids, id_1 %in% spotify_ids)
+
+print(spotify_edges_filtered)
+```
+```{r}
+#merging so that the name column is there for both id_1 and id_0 so I can have artist names instead of their long ID code
+spotify_edges_names_0 <- merge(spotify_edges_filtered, nyc_nodes, by.x = "id_0", by.y = "spotify_id", suffixes = c("", "_name_0"))
+spotify_edges_names <- merge(spotify_edges_names_0, nyc_nodes, by.x = "id_1", by.y = "spotify_id", suffixes = c("_0", "_1"))
+#renaming columns with their names
+spotify_edges_new_name <- spotify_edges_names %>%
+  select(id_0, id_1, name_0, name_1) %>%
+  rename(
+    id_0_name = name_0,
+    id_1_name = name_1
+  )
+#removing duplicate columns
+spotify_edges_namedx <- subset(spotify_edges_new_name, select = -id_0)
+spotify_edges_namedy <- subset(spotify_edges_namedx, select = -id_1)
+```
+
+```{r}
+#adding weighting based on how many times they've collaborated (ended up being irrelevant anyway)
+nyc_spotify_edges_weighted <- spotify_edges_namedy %>%
+  count(id_0_name, id_1_name, name = "weight")
+```
+```{r}
+#filtering nyc_nodes to only include names in the egdes (eg only people who have had a collaboration)
+name_list <- c("Blackway", "Bobby Shmurda", "Fetty Luciano", "Rowdy Rebel", "Chedda Bang", "J.I the Prince of N.Y", "Lil Tjay", "Jay Critch", "Jay Gwuapo", "KJ Balla", "Rowdy Rebel", "CJ", "Sheff G", "HL8", "Mikabeats", "Sleepy Hallow", "Uncle Murda", "Casanova", "Dave East", "Don Q", "Young M.A")
+nyc_nodes_filtered <- nyc_nodes %>%
+  filter(name %in% name_list)
+
+print(nyc_nodes_filtered)
+```
+
+
+```{r}
+#filtering AGAIN for names
+valid_names <- nyc_nodes_filtered$name
+nyc_edges_filtered_again <- spotify_edges_namedy %>%
+  filter(id_0_name %in% valid_names, id_1_name %in% valid_names)
+
+```
+
+```{r}
+#graphing the collaboration network
+network_nyc <- graph_from_data_frame(d = spotify_edges_names, 
+                               vertices = nyc_nodes_filtered, 
+                               directed = FALSE)
+
+plot(network_nyc, vertex.label = V(network_nyc)$name, edge.width = E(network_nyc)$weight / 10000, 
+     vertex.size = log(V(network_nyc)$followers + 1) * 2, 
+     main = "Figure 1: NYC Rapper Collaboration Network")
+```
+
+```{r}
+#filtering the data to show the areas that each artist is from (found through online searches not from this dataset itself)
+V(network_nyc)
+vertex_attr(network_nyc)
+
+
+Brooklyn<-c("Bobby Shmurda", "Fetty Luciano", "Rowdy Rebel", "J.I the Prince of N.Y", "Jay Critch", "Jay Gwuapo", "KJ Balla", "Sheff G", "Sleepy Hallow", "Casanova", "Uncle Murda", "Young M.A")
+Harlem<-c("Dave East")
+Staten_Island<-c("CJ")
+Bronx<-c("Lil Tjay", "Don Q")
+Long_Island<-c("Blackway")
+Other<-c("Chedda Bing", "HL8", "Mikabeats")
+
+V(network_nyc)$area<-NA
+V(network_nyc)$area[V(network_nyc)$name%in% Brooklyn]<- "Brooklyn"
+V(network_nyc)$area[V(network_nyc)$name%in% Harlem]<- "Harlem"
+V(network_nyc)$area[V(network_nyc)$name%in% Staten_Island]<- "Staten Island"
+V(network_nyc)$area[V(network_nyc)$name%in% Bronx]<- "The Bronx"
+V(network_nyc)$area[V(network_nyc)$name%in% Long_Island]<- "Long Island"
+V(network_nyc)$area[V(network_nyc)$name%in% Other]<- "Other"
+vertex_attr(network_nyc)
+
+ggraph(network_nyc)+
+  geom_node_point()+
+  geom_edge_link()+
+  geom_node_label(aes(label=name,
+                      fill=area))+
+  theme_graph(base_family = "Arial") +
+  ggtitle("Figure 2: NYC Rapper Collaborations with Area")+
+  scale_fill_manual(values=c("indianred1",
+                             "blueviolet",
+                             "cyan2",
+                             "darkolivegreen1",
+                             "blue1",
+                             "darkorange"))
+```
+
+
+```{r}
+#plotting in a circular graph
+ggraph(network_nyc,
+       layout="circle")+
+  geom_node_point()+
+  geom_edge_link()+
+  geom_node_label(aes(label=name,
+                      fill=area))+
+  ggtitle("Figure 3: NYC Rapper Collaborations with Area")+
+  theme_graph(base_family = "Arial") +
+  scale_fill_manual(values=c("indianred1",
+                             "blueviolet",
+                             "cyan2",
+                             "darkolivegreen1",
+                             "blue1",
+                             "darkorange"))
+```
+
+```{r}
+degree(network_nyc)
+```
+```{r}
+betweenness(network_nyc)
+```
+```{r}
+closeness(network_nyc)
+```
+
+```{r}
+install.packages("ggrepel")
+library(ggrepel)
+```
+
+```{r}
+library(ggplot2)
+ggplot(nyc_nodes_filtered,
+       aes(x = reorder(name, followers), y = followers, fill = name)) + 
+  geom_bar(stat = "identity") +
+  scale_fill_viridis_d(option = "D") + 
+  labs(title = "Figure 4: Followers of New York City Rappers", 
+       x = "Artist", 
+       y = "Followers") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+```{r}
+ggplot(nyc_nodes_filtered,
+       aes(x = reorder(name, popularity), y = popularity, fill = name)) + 
+  geom_bar(stat = "identity") +
+  scale_fill_viridis_d(option = "B") + 
+  labs(title = "Figuer 5: Popularity of New York City Rappers", 
+       x = "Artist", 
+       y = "Popularity") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+```{r}
+warnings()
+```
+

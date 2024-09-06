@@ -1,0 +1,14 @@
+{
+  "hash": "7d9c8ea1db3a8137cc84566458aa946a",
+  "result": {
+    "markdown": "---\ntitle: \"\"\nimage: img/effectiveness-holistic.svg\ntoc: false\ntitle-block-banner: \"#006353\"\ntitle-block-banner-color: \"#f0f0f0\"\nabout:\n  template: trestles\n---\n\n\n<br>\n\n# Investing in Prevention & Support\n\n#### Spending on family support, children’s centres, young peoples’ services, and other forms of help and child welfare interventions in England,<br>2009-10 to 2021-22\n\n<br>\n\n****\n\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

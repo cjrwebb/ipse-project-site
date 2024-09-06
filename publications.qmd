@@ -1,0 +1,43 @@
+---
+title: "Publications"
+image: img/publications.svg
+toc: false
+about:
+  template: trestles
+---
+
+
+# Publications
+
+Publications in peer-reviewed journals and other periodicals, presentations, and published reports are available from this page. Please note that new articles will be added to this page over time, but you can be notified of their publication by [following my account on Google Scholar](https://scholar.google.com/citations?user=CNYHo0IAAAAJ&hl=en){target="_blank"}. 
+
+****
+
+### Reports
+
+* Webb, C. (2024). *Investing in Prevention and Support: Spending on family support, children’s centres, young peoples’ services, and other forms of help and child welfare interventions in England, 2009-10 to 2021-22. Final Report*. Sheffield, UK: The University of Sheffield. doi: 10.15131/shef.data.26364292
+
+* Webb, C., Bennett, D., Bywaters, P. and Hood, R. (2022) *Evidence Paper: Impact of investing in prevention on demand for statutory children's social care.* London, U.K.: National Children's Bureau. \[[link](https://www.ncb.org.uk/sites/default/files/uploads/attachments/Evidence%20Paper%20-%20Investing%20in%20Prevention%20-%20FINAL.pdf){target="_blank"}\]
+
+
+### Presentations
+
+* Webb, C. (2024). *Investing in Prevention & Support: Spending on family support, children’s centres, young peoples’ services, and other forms of help and child welfare interventions in England, 2009-10 to 2021-22. Presentation*. The University of Sheffield, UK. https://doi.org/10.15131/shef.data.26348338 \[[link](https://calumwebb.co.uk/pres/ipse/#1){target="_blank"}\]
+  * Presented at: *Social Policy Association Annual Conference, 2024, Glasgow, UK.*; *University of Eastern Finland (Itä-Suomen Yliopisto), 2024, Kuopio, FI*
+
+* Webb, C. (2023). *Estimating the effect of preventative services on child welfare intervention rates under austerity.* \[[link](https://calumwebb.co.uk/pres/eusarf-2023/#1){target="_blank"}\]
+  * Presented at: *Borrowing Our Neighbours' Methods Symposium, EUSARF 2023, University of Sussex, UK.*
+  
+* Webb, C. (2023). *Should we retire null hypothesis significance testing in (some) social policy research?* \[[link](https://calumwebb.co.uk/pres/spa-2023-retire-nhst/#1){target="_blank"}\]
+  * Presented at: *Social Policy Association Conference 2023, Nottingham, UK*
+
+
+### Journal articles
+
+* Webb, C., & Bywaters, P. (2024). Inequalities in out-of-home care rates in England: Does local party politics matter?. *Child Abuse & Neglect*, 149, 106590. \[[link](https://doi.org/10.1016/j.chiabu.2023.106590){target="_blank"}\]
+
+* Webb, C. (2023). In defence of ordinary help: estimating the effect of early help/family support spending on children in need rates in England using ALT-SR. *Journal of Social Policy*, 52(2), 396-423. \[[link](https://doi.org/10.1017/S0047279421000696){target="_blank"}\]
+
+* Webb, C. J. (2022). More money, more problems? Addressing the funding conditions required for rights-based child welfare services in England. *Societies*, 12(1), 9.\[[link](https://www.mdpi.com/2075-4698/12/1/9){target="_blank"}\]
+
+* Webb, C. J., Bennett, D. L., & Bywaters, P. (2022). Austerity, poverty, and children’s services quality in England: Consequences for child welfare and public services. *Social Policy and Society*, 1-22. \[[link](https://doi.org/10.1017/S147474642200001X){target="_blank"}\]

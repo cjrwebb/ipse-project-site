@@ -1,0 +1,24 @@
+---
+title: "Investing in Prevention & Support"
+image: img/effectiveness-holistic.svg
+toc: false
+about:
+  template: trestles
+---
+
+<br>
+
+# Investing in Prevention & Support
+
+#### Spending on family support, children’s centres, young peoples’ services, and other forms of help and child welfare interventions in England, 2009-10 to 2021-22
+
+<br>
+
+****
+
+This website hosts the outputs for the British Academy funded postdoctoral fellowship project: "Investment in Prevention and its Systemic Effects: Modelling the causal effects of spending in children’s services with a whole systems approach. (2021)" (PF21\210024). The project used novel analytical methods and administrative local authority level data between 2009-10 and 2021-22, a period of dramatic changes in funding, to analyse the impact that children's services spending on youth work, centres and services, children's centres, family support, and other preventative and supportive provision has on rates of children receiving child welfare interventions in England.
+
+Here you can find summaries of the findings, including in presentation form; download a copy of the full report; find publications and open data and research code related to the project; and use the interactive application for exploring local authority variation. 
+
+The project was led by [Dr. Calum Webb](https://www.sheffield.ac.uk/smi/people/academic/calum-webb){target="_blank"} at the University of Sheffield, UK. 
+

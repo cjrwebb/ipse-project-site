@@ -1,0 +1,26 @@
+{
+  "index.qmd": {
+    "index.html": "b52e4312"
+  },
+  "about.qmd": {
+    "about.html": "7006755d"
+  },
+  "exec-summary.qmd": {
+    "exec-summary.html": "658a73a3"
+  },
+  "shiny-app.qmd": {
+    "shiny-app.html": "fb22ab7c"
+  },
+  "slides.qmd": {
+    "slides.html": "495aa6f3"
+  },
+  "publications.qmd": {
+    "publications.html": "7189cf70"
+  },
+  "code-repos.qmd": {
+    "code-repos.html": "487ccb05"
+  },
+  "download-report.qmd": {
+    "download-report.html": "09b59445"
+  }
+}
