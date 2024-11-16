@@ -10,7 +10,7 @@ website:
       - href: index.qmd
         text: Home
       - href: exec-summary.qmd
-        text: Executive Summary
+        text: Research Findings
       - href: slides.qmd
         text: Presentation
       - href: shiny-app.qmd

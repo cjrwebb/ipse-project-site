@@ -1,5 +1,5 @@
 ---
-title: "Extended Summary"
+title: "Research Findings"
 image: img/summary.svg
 toc: true
 about:
@@ -41,7 +41,7 @@ off_white <- "#f0f0f0"
 ```
 
 
-# Extended Summary
+# Research Findings
 
 This page provides a summary of the key findings found in the report, as well as some background to the topic and a brief overview of the methods and data used. The full report contains additional detail on methodological justifications, discussion of existing academic literature, and full transcripts of statistical models and other technical details. The three most important findings for policymakers, providers of children's services, and families are as follows:
 
@@ -49,7 +49,7 @@ This page provides a summary of the key findings found in the report, as well as
 
 * Increased spending on preventative and supportive services was very likely to be cost-neutral or to generate savings in local authority spending. Reducing the costs associated with caring for children who might otherwise live with their families of origin, and improving their mental health and criminal justice outcomes alone would be expected to fund 30p of every £1 spent on any increase each year. The additional benefit of these services reducing child poverty would be expected to result in a further £2.70 of savings for every £1 of spending.
 
-* We must be mindful of the inequalities detected in the research to ensure all children benefit equitably. The research suggested that the effect of increasing spending on preventative and supportive services for children and families varied by local authority, over time, and between age, gender, and ethnic groups. However, the evidence suggests that funding more preventative services creates opportunities for addressing over-representation of some populations in the child welfare system.
+* We must be mindful of the inequalities detected in the research to ensure all children benefit equitably. The research suggested that the effect of increasing spending on preventative and supportive services for children and families varied by local authority, over time, and between age, gender, and ethnic groups. However, the evidence suggests that funding more preventative services creates opportunities for addressing over-representation of some populations — especially older children, and children with Black, Mixed/Multiple, or 'Other' ethnic heritage — in the children's social care system.
 
 This research only considered the relationship between spending and rates of intervention. It did not consider other important factors that should be kept in mind when considering this topic, such as the quality of services received by families; the qualitative experiences of families and social workers working in children's services over this period of time; or the effect of greater spending on the social, emotional, educational outcomes and development of children and young people.
 
