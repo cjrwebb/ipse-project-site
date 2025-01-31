@@ -9,7 +9,11 @@ about:
 
 # Explore Local Authority variation using the IPSE Shiny App
 
-This research used multilevel modelling with random slopes in order to estimate differential predicted effects of increased spending on child welfare interventions depending on the local authority children's services that received the funding. An interactive app that works within your browser has been created to facilitate the exploration of these findings. The app can be accessed by clicking [here](){target="_blank"}.
+This research used multilevel modelling with random slopes in order to estimate differential predicted effects of increased spending on child welfare interventions depending on the local authority children's services that received the funding. An interactive app that works within your browser has been created to facilitate the exploration of these findings. The app can be accessed by clicking [here](https://webb.shinyapps.io/ipse/){target="_blank"}.
+
+
+![](img/ipse_preview.png)
+
 
 ****
 

@@ -5,6 +5,8 @@ website:
   title: "IPSE"
   open-graph: true
   twitter-card: true
+  site-url: https://ipse.calumwebb.co.uk
+  image: "https://ipse.calumwebb.co.uk/img/preview.png"
   navbar:
     left:
       - href: index.qmd
@@ -26,7 +28,7 @@ website:
         icon: file-earmark-arrow-down-fill
   favicon: img/favicon.svg
   page-footer: 
-    left: Copyright 2024 Calum Webb
+    left: Copyright 2025- Calum Webb
     right: Postdoctoral Fellowship PF21\210024
     center: | 
       ![](img/BA_Primary-Logo-White.svg){width=75px} &nbsp; &nbsp; &nbsp; 

@@ -53,7 +53,7 @@ This page provides a summary of the key findings found in the report, as well as
 
 This research only considered the relationship between spending and rates of intervention. It did not consider other important factors that should be kept in mind when considering this topic, such as the quality of services received by families; the qualitative experiences of families and social workers working in children's services over this period of time; or the effect of greater spending on the social, emotional, educational outcomes and development of children and young people.
 
-**Please cite this summary as:** Webb, C. (2024). *Investing in Prevention and Support: Spending on family support, children’s centres, young peoples’ services, and other forms of help and child welfare interventions in England, 2009-10 to 2021-22. Final Report.* Sheffield, UK: The University of Sheffield. doi: 10.15131/shef.data.26364292
+**Please cite this summary as:** Webb, C. (2025). *Investing in Prevention and Support: Spending on family support, children’s centres, young peoples’ services, and other forms of help and child welfare interventions in England, 2009-10 to 2021-22. Final Report.* Sheffield, UK: The University of Sheffield. doi: 10.15131/shef.data.26364292
 
 
 <br>
@@ -97,7 +97,7 @@ areas or of making useful comparisons between local authorities". Combining all 
 However, it can be helpful context to know, generally speaking, the average proportion of spending on each category and how it has changed before relying on a combined categorisation. As shown in Table 1, spending was predominantly on Sure Start and Under 5 services in 2009-10, with a fairly equal split between Family Support Services and Young Peoples Services across the remainder, with around ten percent of spending falling under the 'other' category.
 
 
-| Category.               | Spend £bn (%) <br> 2009-10 | Spend £bn (%) <br> 2021-22 | 
+| Category                | Spend £bn (%) <br> 2009-10 | Spend £bn (%) <br> 2021-22 | 
 |:------------------------|------------------------:|------------------------:|
 | Sure Start & Under 5    | 1.84 (39.8)             | 0.51 (20.3)             | 
 | Family Support Services | 1.07 (23.3)             | 1.44 (58.1)             |
@@ -169,9 +169,51 @@ spendribbon_prev + spendribbon_safg +
         ))
 
 
+# Version on a White Background
+
+# 
+# 
+# spendribbon_prev <- safeguarding_prev_spend_change %>%
+#   ggplot() +
+#   geom_ribbon(aes(x = time_period, ymin = q25_prev_spend + 284, ymax = q75_prev_spend + 284),
+#                fill = turquoise_light, colour = "transparent") +
+#   geom_line(aes(x = time_period, y = med_prev_spend + 284), colour = turquoise_dark) +
+#   geom_point(aes(x = time_period, y = med_prev_spend + 284), colour = turquoise_dark, pch = 18) +
+#   scale_x_continuous(breaks = seq(2010, 2022, 2)) +
+#   ylab("Preventative Spending per Child\n(50% Quantile)") +
+#   xlab("Year Ending") +
+#   theme(text = element_text(family = "Source Sans Pro"), 
+#         axis.text = element_text(family = "Source Sans Pro")
+#         ) +
+#   theme_minimal()
+# 
+# spendribbon_safg <- safeguarding_prev_spend_change %>%
+#   ggplot() +
+#   geom_ribbon(aes(x = time_period, ymin = q25_safg_spend +241, ymax = q75_safg_spend+241),
+#                fill = ipse_lightgold, colour = "transparent") +
+#   geom_line(aes(x = time_period, y = med_safg_spend+241), colour = ipse_gold) +
+#   geom_point(aes(x = time_period, y = med_safg_spend+241), colour = ipse_gold, pch = 18) +
+#   scale_x_continuous(breaks = seq(2010, 2022, 2)) +
+#   ylab("Safeguarding Spending per Child\n(50% Quantile)") +
+#   xlab("Year Ending") +
+#   theme(text = element_text(family = "Source Sans Pro"), 
+#         axis.text = element_text(family = "Source Sans Pro")
+#         ) +
+#   theme_minimal()
+# 
+# 
+# library(patchwork)
+# 
+# spend_change_time <- spendribbon_prev + spendribbon_safg +
+#   plot_layout(axis_titles = "collect") 
+# 
+# ggsave(plot = spend_change_time, filename = "img/spend_change_time.svg", width = 6, height = 3)
+
+
+
 ```
 
-However, evidence that demonstrates the efficacy of this kind of spending on child welfare interventions has been limited. As the authors of the Association for Directors of Children's Services [2014 Safeguarding Pressures report](https://www.adcs.org.uk/wp-content/uploads/2024/05/adcs-sg-pressures-p4-exec-summary.pdf){target="_blank"} put it, "understanding the prevalence and impact of early help services nationally is difficult". Most notably, the National Audit Office in 2019 published a [report](https://www.nao.org.uk/wp-content/uploads/2019/01/Pressures-on-Childrens-Social-Care.pdf){target="_blank"} that claimed that reduced spending on Sure Start and Children's Centres had not reduced rates of child protection plans. This lack of evidence has been influential in policymaking, and runs counter to the logic that investing in preventation and support should reduce rates of intervention.
+However, evidence that demonstrates the efficacy of this kind of spending on child welfare interventions has been limited. As the authors of the Association for Directors of Children's Services [2014 Safeguarding Pressures report](https://www.adcs.org.uk/wp-content/uploads/2024/05/adcs-sg-pressures-p4-exec-summary.pdf){target="_blank"} put it, "understanding the prevalence and impact of early help services nationally is difficult". Most notably, the National Audit Office in 2019 published a [report](https://www.nao.org.uk/wp-content/uploads/2019/01/Pressures-on-Childrens-Social-Care.pdf){target="_blank"} that claimed that reduced spending on Sure Start and Children's Centres had not reduced rates of child protection plans. This lack of evidence has been influential in policymaking, and runs counter to the logic that investing in prevention and support should reduce rates of intervention.
 
 More recently, evidence that spending on preventative and supportive services reduces child welfare interventions has been mounting, and was summarised in an [evidence paper](https://www.ncb.org.uk/sites/default/files/uploads/attachments/Evidence%20Paper%20-%20Investing%20in%20Prevention%20-%20FINAL.pdf){target="_blank"} I co-authored with Dr. Davara Bennett, Professor Rick Hood, Professor Paul Bywaters, and the National Children's Bureau. 
 
